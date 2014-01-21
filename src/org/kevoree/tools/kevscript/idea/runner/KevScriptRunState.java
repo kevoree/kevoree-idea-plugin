@@ -15,9 +15,11 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.kevoree.resolver.MavenResolver;
 
 import java.io.File;
 import java.io.OutputStream;
+import java.util.HashSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -32,6 +34,8 @@ public class KevScriptRunState extends JavaCommandLineState {
         super(environment);
     }
 
+    private static final MavenResolver resolver = new MavenResolver();
+
     @Override
     protected JavaParameters createJavaParameters() throws ExecutionException {
 
@@ -39,18 +43,20 @@ public class KevScriptRunState extends JavaCommandLineState {
 
         //Tries to collect the module, to get the output folder
         Module module = ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+       /*
         if(module == null) {
             module = (Module) getEnvironment().getDataContext().getData("module");
-        }
+        }*/
 
 
         //
-        File KevoreeBase = null;
-        //TODO
-
+        File kevoreeBase = resolver.resolve("org.kevoree.platform","org.kevoree.platform.standalone","latest","jar",new HashSet<String>());
+        if(kevoreeBase == null){
+            throw new ExecutionException("Unresolved Kevoree Runtime for version latest");
+        }
 
         parameters.setMainClass("org.kevoree.platform.standalone.App");
-        parameters.getClassPath().add(KevoreeBase);
+        parameters.getClassPath().add(kevoreeBase);
         parameters.getProgramParametersList().add("node.name", "node0");
         parameters.getProgramParametersList().add("node.bootstrap", ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
 
