@@ -63,8 +63,8 @@ public class KevScriptRunState extends JavaCommandLineState {
         parameters.setJdk(SDK);
         parameters.setMainClass("org.kevoree.platform.standalone.App");
         parameters.getClassPath().add(kevoreeBase);
-        parameters.getProgramParametersList().add("node.name", "node0");
-        parameters.getProgramParametersList().add("node.bootstrap", ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
+        parameters.getVMParametersList().add("-Dnode.name=node0");
+        parameters.getVMParametersList().add("-Dnode.bootstrap="+((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
 
 
 
