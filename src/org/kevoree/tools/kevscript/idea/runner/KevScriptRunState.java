@@ -11,7 +11,10 @@ import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.compiler.*;
+import com.intellij.openapi.compiler.Compiler;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.projectRoots.Sdk;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -43,6 +46,8 @@ public class KevScriptRunState extends JavaCommandLineState {
 
         //Tries to collect the module, to get the output folder
         Module module = ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+        ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
+        Sdk SDK = moduleRootManager.getSdk();
        /*
         if(module == null) {
             module = (Module) getEnvironment().getDataContext().getData("module");
@@ -55,6 +60,7 @@ public class KevScriptRunState extends JavaCommandLineState {
             throw new ExecutionException("Unresolved Kevoree Runtime for version latest");
         }
 
+        parameters.setJdk(SDK);
         parameters.setMainClass("org.kevoree.platform.standalone.App");
         parameters.getClassPath().add(kevoreeBase);
         parameters.getProgramParametersList().add("node.name", "node0");
