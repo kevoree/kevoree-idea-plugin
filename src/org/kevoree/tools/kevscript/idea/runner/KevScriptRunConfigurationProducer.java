@@ -25,6 +25,7 @@ public class KevScriptRunConfigurationProducer extends RunConfigurationProducer<
             if(configurationContext.getLocation().getVirtualFile().getExtension().equals(KevScriptLanguageType.DEFAULT_EXTENSION)){
                 kevScriptRunConfiguration.kevsFile = configurationContext.getLocation().getVirtualFile();
                 kevScriptRunConfiguration.setName("Run " + configurationContext.getModule().getName());
+                kevScriptRunConfiguration.setModule(configurationContext.getModule());
                 return true;
             }
         }
