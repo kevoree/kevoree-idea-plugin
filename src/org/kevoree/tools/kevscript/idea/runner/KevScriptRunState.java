@@ -2,6 +2,9 @@ package org.kevoree.tools.kevscript.idea.runner;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.CommandLineState;
+import com.intellij.execution.configurations.JavaCommandLineState;
+import com.intellij.execution.configurations.JavaParameters;
+import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.runners.ExecutionEnvironment;
@@ -13,6 +16,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.io.OutputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,63 +25,112 @@ import java.util.concurrent.Semaphore;
 /**
  * Created by gregory.nain on 20/01/2014.
  */
-public class KevScriptRunState extends CommandLineState {
+public class KevScriptRunState extends JavaCommandLineState {
 
-    ExecutorService executor;
 
     protected KevScriptRunState(ExecutionEnvironment environment) {
         super(environment);
     }
 
-
-    @NotNull
     @Override
-    protected ProcessHandler startProcess() throws ExecutionException {
+    protected JavaParameters createJavaParameters() throws ExecutionException {
 
-        final KevScriptRunnerProcessHandler handler = new KevScriptRunnerProcessHandler(this);
+        JavaParameters parameters = new JavaParameters();
 
-        CompilerManager.getInstance(getEnvironment().getProject()).make((Module) getEnvironment().getDataContext().getData("module"), new CompileStatusNotification() {
-            @Override
-            public void finished(boolean b, int i, int i2, final CompileContext compileContext) {
-                System.out.println("Make finished");
+        //Tries to collect the module, to get the output folder
+        Module module = ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+        if(module == null) {
+            module = (Module) getEnvironment().getDataContext().getData("module");
+        }
 
-                executor = Executors.newSingleThreadExecutor();
-                executor.execute(new Runnable() {
-                    @Override
-                    public void run() {
 
-                        for (VirtualFile f : compileContext.getAllOutputDirectories()) {
-                            handler.notifyTextAvailable("Adding components from location:" + f.getPath() + '\n', ProcessOutputTypes.STDOUT);
-                            System.out.println(f.getPath());
-                        }
+        //
+        File KevoreeBase = null;
+        //TODO
 
-                        for(int j = 0; j < 5; j++) {
-                            try {
-                                handler.notifyTextAvailable("Working hard " + j + '\n', ProcessOutputTypes.STDOUT);
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        handler.destroyProcess();
-                    }
-                });
 
-            }
-        });
-        //System.out.println(moduleOutputDir.getPath());
-        //System.out.println(moduleOutputDir.exists());
-        //Module m = (Module)getEnvironment().getDataContext().getData("module");
+        parameters.setMainClass("org.kevoree.platform.standalone.App");
+        parameters.getClassPath().add(KevoreeBase);
+        parameters.getProgramParametersList().add("node.name", "node0");
+        parameters.getProgramParametersList().add("node.bootstrap", ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
+
+
+
+        //parameters.configureByModule(module, JavaParameters.CLASSES_ONLY);
+
+        //Checks if the output folder exists; launches a Make otherwise
         /*
-        GlobalSearchScope contentScope = m.getModuleContentScope();
-        GlobalSearchScope runtimeScope = m.getModuleRuntimeScope(true);
-        String moduleFilePath = m.getModuleFilePath();
-        ModuleWithDependenciesScope moduleScope = (ModuleWithDependenciesScope)m.getModuleScope();
-
-        getEnvironment().getExecutionId();
-        //getConfigurationModule().getModule().getModuleRuntimeScope(true);
+        if(CompilerPaths.getModuleOutputDirectory(module, false) != null && CompilerPaths.getModuleOutputDirectory(module, false).exists()) {
+            VirtualFile[] moduleOutputDir = new VirtualFile[1];
+            moduleOutputDir[0] = CompilerPaths.getModuleOutputDirectory(module, false);
+            handler = runBootstrap(moduleOutputDir);
+        } else {
+            CompilerManager.getInstance(getEnvironment().getProject()).make(module, new CompileStatusNotification() {
+                @Override
+                public void finished(boolean b, int i, int i2, final CompileContext compileContext) {
+                    System.out.println("Make finished");
+                    handler = runBootstrap(compileContext.getAllOutputDirectories());
+                }
+            });
+        }
         */
 
-        return handler;
+
+        return parameters;
     }
+
+
+
+    /*
+    *
+    *  for (VirtualFile f : outputFolders) {
+                    handler.notifyTextAvailable("Adding components from location:" + f.getPath() + '\n', ProcessOutputTypes.STDOUT);
+                    System.out.println(f.getPath());
+                }
+
+                for (int j = 0; j < 5; j++) {
+                    try {
+                        handler.notifyTextAvailable("Working hard " + j + '\n', ProcessOutputTypes.STDOUT);
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                handler.destroyProcess();
+    *
+    *
+    *
+    *
+    *   //Tries to collect the module, to get the output folder
+        Module module = ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+        if(module == null) {
+            module = (Module) getEnvironment().getDataContext().getData("module");
+        }
+        parameters.configureByModule(module, JavaParameters.CLASSES_ONLY);
+        parameters.
+
+
+
+        //Checks if the output folder exists; launches a Make otherwise
+        if(CompilerPaths.getModuleOutputDirectory(module, false) != null && CompilerPaths.getModuleOutputDirectory(module, false).exists()) {
+            VirtualFile[] moduleOutputDir = new VirtualFile[1];
+            moduleOutputDir[0] = CompilerPaths.getModuleOutputDirectory(module, false);
+            handler = runBootstrap(moduleOutputDir);
+        } else {
+
+            CompilerManager.getInstance(getEnvironment().getProject()).make(module, new CompileStatusNotification() {
+                @Override
+                public void finished(boolean b, int i, int i2, final CompileContext compileContext) {
+                    System.out.println("Make finished");
+                    handler = runBootstrap(compileContext.getAllOutputDirectories());
+                }
+            });
+        }
+    *
+    *
+    *
+    * */
+
+
+
 }

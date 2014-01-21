@@ -1,5 +1,6 @@
 package org.kevoree.tools.kevscript.idea.runner;
 
+import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.ui.ConsoleViewContentType;
@@ -9,6 +10,7 @@ import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.sun.javafx.binding.StringFormatter;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedOutputStream;
@@ -23,12 +25,17 @@ import static com.intellij.execution.ui.ConsoleViewContentType.NORMAL_OUTPUT;
 /**
  * Created by gregory.nain on 20/01/2014.
  */
-public class KevScriptRunnerProcessHandler extends ProcessHandler {
-
-    public KevScriptRunnerProcessHandler(final KevScriptRunState state) {
-
+public class KevScriptRunnerProcessHandler extends OSProcessHandler {
+    public KevScriptRunnerProcessHandler(@NotNull Process process) {
+        super(process);
     }
 
+
+
+    /*
+    public KevScriptRunnerProcessHandler(final KevScriptRunState state) {
+        super();
+    }
 
     @Override
     protected void destroyProcessImpl() {
@@ -55,4 +62,5 @@ public class KevScriptRunnerProcessHandler extends ProcessHandler {
             }
         };
     }
+*/
 }
