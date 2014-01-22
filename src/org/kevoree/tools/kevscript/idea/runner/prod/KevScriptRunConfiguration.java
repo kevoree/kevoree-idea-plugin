@@ -34,14 +34,25 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
     public String moduleName;
     public String kevoreeRuntimeVersion;
 
-
     protected static final MavenResolver resolver = new MavenResolver();
     public SortedSet<String> availableRuntimeVersions;
 
+    public KevScriptRunConfiguration(String name, KevRunConfigurationModule configurationModule, ConfigurationFactory factory) {
+        super(name, configurationModule, factory);
+        loadKevoreeRuntimeVersions();
+    }
+
+    public KevScriptRunConfiguration(KevRunConfigurationModule configurationModule, ConfigurationFactory factory) {
+        super(configurationModule, factory);
+        loadKevoreeRuntimeVersions();
+    }
 
     protected KevScriptRunConfiguration(Project project, ConfigurationFactory factory, String name) {
         super(name, new KevRunConfigurationModule(project), factory);
+        loadKevoreeRuntimeVersions();
+    }
 
+    private void loadKevoreeRuntimeVersions() {
         Set<String> urls = new HashSet<String>();
         urls.add("http://repo1.maven.org/maven2/");
         urls.add("http://oss.sonatype.org/content/groups/public/");
@@ -82,6 +93,10 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
     public void readExternal(Element element) throws InvalidDataException {
         super.readExternal(element);
 
+        if(getName().equals("KevScriptRunnerTemplate") || getName().equals("KevScriptDevRunnerTemplate")) {
+            return;
+        }
+
         if(element.getChild("KevsFile") != null) {
             VirtualFile f = VirtualFileManager.getInstance().findFileByUrl(element.getChild("KevsFile").getAttributeValue("location"));
             if(f != null) {
@@ -111,6 +126,11 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
     @Override
     public void writeExternal(Element element) throws WriteExternalException {
         super.writeExternal(element);
+
+        if(getName().equals("KevScriptRunnerTemplate") || getName().equals("KevScriptDevRunnerTemplate")) {
+            return;
+        }
+
 
         if(kevsFile != null) {
             Element kevsFileElem = new Element("KevsFile");

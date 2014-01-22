@@ -22,6 +22,6 @@ public class KevScriptRunConfigurationFactory extends ConfigurationFactory {
 
     @Override
     public RunConfiguration createTemplateConfiguration(Project project) {
-        return new KevScriptRunConfiguration(project, this, "Default KevScript Runner");
+        return new KevScriptRunConfiguration(project, this, "KevScriptRunnerTemplate");
     }
 }
