@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="org.kevoree.maven.resolver-14">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.kevoree.maven.resolver-14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
