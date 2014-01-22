@@ -19,6 +19,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.kevoree.resolver.MavenResolver;
+import org.kevoree.tools.kevscript.idea.utils.KevoreeMavenResolver;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -53,11 +54,7 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
     }
 
     private void loadKevoreeRuntimeVersions() {
-        Set<String> urls = new HashSet<String>();
-        urls.add("http://repo1.maven.org/maven2/");
-        urls.add("http://oss.sonatype.org/content/groups/public/");
-
-        availableRuntimeVersions = resolver.listVersion("org.kevoree.platform", "org.kevoree.platform.standalone", "jar", urls);
+        availableRuntimeVersions = KevoreeMavenResolver.getAllRuntimeVersions();
         kevoreeRuntimeVersion = availableRuntimeVersions.first();
     }
 
