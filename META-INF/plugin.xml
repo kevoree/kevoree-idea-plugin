@@ -83,6 +83,8 @@
         <configurationType implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevRunConfigurationType"/>
         <runConfigurationProducer implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevRunConfigurationProducer"/>
 
+
+
         <internalFileTemplate name="KevScript"/>
         <internalFileTemplate name="KevComponent"/>
         <internalFileTemplate name="KevChannel"/>
