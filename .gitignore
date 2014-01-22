@@ -4,3 +4,4 @@ out/
 *.war
 *.ear
 .DS_Store
+workspace.xml
