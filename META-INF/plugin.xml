@@ -1,23 +1,25 @@
 <idea-plugin version="2">
-    <id>org.kevoree.tools.idea.plugin</id>
+    <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>1.0</version>
+    <version>1</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
-      Kevoree IDE plugin<br>
-      <i>Kevoree environement</i>
+      The Kevoree Plugin provides several tools to help the development of components for Kevoree.<br/>
+      - Wizards to create a Kevoree Project, Kevoree Components, Channels and Groups <br/>
+      - A wizards to create a KevScript file with its editor <br/>
+      - A runner to launch a Kevoree Runtime of any available version, that launches using your KevScript as base configuration.
       ]]></description>
 
     <change-notes><![CDATA[
-      Add change notes here.<br>
-      <small>most HTML tags may be used</small>
-      ]]>
+      This is the first BETA release of the plugin.<br/>
+      It contains only new features ! :-)
+            ]]>
     </change-notes>
 
     <idea-version since-build="107.105"/>
     <category>Custom Languages</category>
-    <resource-bundle>org.kevoree.tools.kevscript.idea.KevBundle</resource-bundle>
+    <resource-bundle>org.kevoree.idea.KevBundle</resource-bundle>
     <depends>com.intellij</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.platform</depends>
@@ -40,50 +42,48 @@
 
             <action id="Kevoree.NewKevScriptFileAction" text="KevScript"
                     description="Create a new KevScript in the current project"
-                    class="org.kevoree.tools.kevscript.idea.actions.NewKevScriptFileAction">
+                    class="org.kevoree.idea.actions.NewKevScriptFileAction">
             </action>
 
             <action id="Kevoree.NewComponentTypeAction"
-                    class="org.kevoree.tools.kevscript.idea.actions.NewComponentTypeAction" text="Component"
+                    class="org.kevoree.idea.actions.NewComponentTypeAction" text="Component"
                     description="Create a new Kevoree Component in the current project"/>
 
             <action id="Kevoree.NewChannelTypeAction"
-                    class="org.kevoree.tools.kevscript.idea.actions.NewChannelTypeAction" text="Channel"
+                    class="org.kevoree.idea.actions.NewChannelTypeAction" text="Channel"
                     description="Create a new Kevoree Channel in the current project"/>
 
             <action id="Kevoree.NewGroupTypeAction"
-                    class="org.kevoree.tools.kevscript.idea.actions.NewGroupTypeAction" text="Group"
+                    class="org.kevoree.idea.actions.NewGroupTypeAction" text="Group"
                     description="Create a new Kevoree Group in the current project"/>
 
         </group>
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileTypeFactory implementation="org.kevoree.tools.kevscript.idea.KevScriptFileTypeFactory"/>
+        <fileTypeFactory implementation="org.kevoree.idea.KevScriptFileTypeFactory"/>
         <lang.parserDefinition language="KevScript"
-                               implementationClass="org.kevoree.tools.kevscript.idea.KevScriptParserDefinition"/>
+                               implementationClass="org.kevoree.idea.KevScriptParserDefinition"/>
         <lang.syntaxHighlighterFactory key="KevScript"
-                                       implementationClass="org.kevoree.tools.kevscript.idea.highlighter.KevScriptSyntaxHighlighterFactory"/>
-        <colorSettingsPage implementation="org.kevoree.tools.kevscript.idea.highlighter.KevScriptColorSettingsPage"/>
+                                       implementationClass="org.kevoree.idea.highlighter.KevScriptSyntaxHighlighterFactory"/>
+        <colorSettingsPage implementation="org.kevoree.idea.highlighter.KevScriptColorSettingsPage"/>
 
         <!-- wizards -->
-        <moduleBuilder builderClass="org.kevoree.tools.kevscript.idea.ide.KevoreeModuleBuilder"/>
-        <wizardMode implementation="org.kevoree.tools.kevscript.idea.wizards.KevoreeProjectWizard"/>
+        <moduleBuilder builderClass="org.kevoree.idea.ide.KevoreeModuleBuilder"/>
+        <wizardMode implementation="org.kevoree.idea.wizards.KevoreeProjectWizard"/>
 
         <completion.contributor language="KevScript"
-                                implementationClass="org.kevoree.tools.kevscript.idea.ide.KevScriptCompletionContributor"/>
+                                implementationClass="org.kevoree.idea.ide.KevScriptCompletionContributor"/>
 
         <!-- prod runner -->
-        <programRunner implementation="org.kevoree.tools.kevscript.idea.runner.prod.KevScriptProgramRunner"/>
-        <configurationType implementation="org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationType"/>
-        <runConfigurationProducer implementation="org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationProducer"/>
+        <programRunner implementation="org.kevoree.idea.runner.prod.KevScriptProgramRunner"/>
+        <configurationType implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationType"/>
+        <runConfigurationProducer implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationProducer"/>
 
         <!-- dev runner -->
-        <programRunner implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevProgramRunner"/>
-        <configurationType implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevRunConfigurationType"/>
-        <runConfigurationProducer implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevRunConfigurationProducer"/>
-
-
+        <programRunner implementation="org.kevoree.idea.runner.dev.KevScriptDevProgramRunner"/>
+        <configurationType implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationType"/>
+        <runConfigurationProducer implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationProducer"/>
 
         <internalFileTemplate name="KevScript"/>
         <internalFileTemplate name="KevComponent"/>

@@ -13,22 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kevoree.tools.kevscript.idea.ui;
+package org.kevoree.idea.ui;
 
-import com.intellij.execution.configurations.JavaRunConfigurationModule;
-import com.intellij.execution.configurations.ModuleBasedConfiguration;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
-import com.intellij.openapi.module.ModuleType;
-import com.intellij.openapi.module.ModuleTypeManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiClass;
 import com.intellij.ui.ComboboxSpeedSearch;
-import com.intellij.ui.ListCellRendererWrapper;
-import com.intellij.ui.SortedComboBoxModel;
-import org.jetbrains.annotations.Nullable;
-import org.kevoree.resolver.MavenResolver;
-import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfiguration;
+import org.kevoree.idea.runner.prod.KevScriptRunConfiguration;
 
 import javax.swing.*;
 import java.util.*;
@@ -37,7 +26,7 @@ public class KevoreeVersionSelector {
 
     private final Project myProject;
     private final JComboBox myVersionsCombo;
-    private final DefaultComboBoxModel<String> myVersions = new DefaultComboBoxModel<String>();
+    private final DefaultComboBoxModel myVersions = new DefaultComboBoxModel();
 
 
     public KevoreeVersionSelector(final Project project, final JComboBox versionListCombo) {
