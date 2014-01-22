@@ -6,6 +6,7 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationFactory;
+import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationType;
 
 /**
  * Created by gregory.nain on 17/01/2014.

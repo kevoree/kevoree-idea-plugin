@@ -75,10 +75,14 @@ public class KevoreeVersionSelector {
         myVersions.removeAllElements();
         myVersions.addElement("Latest");
         myVersions.addElement("Release");
+        String versionToSelect = null;
         for (String version : versions) {
+            if(!version.contains("SNAPSHOT")) {
+                versionToSelect = version;
+            }
             myVersions.addElement(version);
         }
-        myVersions.setSelectedItem(myVersions.getElementAt(2));
+        myVersions.setSelectedItem(versionToSelect);
 
     }
 

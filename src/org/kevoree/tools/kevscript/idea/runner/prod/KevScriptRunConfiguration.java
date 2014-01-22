@@ -55,7 +55,12 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
 
     private void loadKevoreeRuntimeVersions() {
         availableRuntimeVersions = KevoreeMavenResolver.getAllRuntimeVersions();
-        kevoreeRuntimeVersion = availableRuntimeVersions.first();
+        for(String version : availableRuntimeVersions) {
+            if(!version.contains("SNAPSHOT")) {
+                kevoreeRuntimeVersion = version;
+                break;
+            }
+        }
     }
 
     @NotNull
