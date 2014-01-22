@@ -11,6 +11,7 @@ import org.kevoree.resolver.MavenResolver;
 
 import java.io.File;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by gregory.nain on 20/01/2014.
@@ -30,19 +31,23 @@ public class KevScriptRunState extends JavaCommandLineState {
         JavaParameters parameters = new JavaParameters();
 
         //Tries to collect the module, to get the output folder
-        Module module = ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+        Module module = ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
         ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
         Sdk SDK = moduleRootManager.getSdk();
-        File kevoreeBase = resolver.resolve("org.kevoree.platform","org.kevoree.platform.standalone","latest","jar",new HashSet<String>());
-        if(kevoreeBase == null){
+
+        Set<String> urls = new HashSet<String>();
+        urls.add("http://repo1.maven.org/maven2/");
+        urls.add("http://oss.sonatype.org/content/groups/public/");
+
+        File kevoreeBase = resolver.resolve("org.kevoree.platform", "org.kevoree.platform.standalone", "latest", "jar", urls);
+        if (kevoreeBase == null) {
             throw new ExecutionException("Unresolved Kevoree Runtime for version latest");
         }
         parameters.setJdk(SDK);
         parameters.setMainClass("org.kevoree.platform.standalone.App");
         parameters.getClassPath().add(kevoreeBase);
         parameters.getVMParametersList().add("-Dnode.name=node0");
-        parameters.getVMParametersList().add("-Dnode.bootstrap="+((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
-
+        parameters.getVMParametersList().add("-Dnode.bootstrap=" + ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
 
 
         //parameters.configureByModule(module, JavaParameters.CLASSES_ONLY);
@@ -119,7 +124,6 @@ public class KevScriptRunState extends JavaCommandLineState {
     *
     *
     * */
-
 
 
 }

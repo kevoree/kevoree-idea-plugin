@@ -16,6 +16,7 @@ import org.kevoree.resolver.MavenResolver;
 
 import java.io.File;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by gregory.nain on 20/01/2014.
@@ -36,7 +37,12 @@ public class KevScriptRunState extends JavaCommandLineState {
         JavaParameters parameters = new JavaParameters();
         ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
         Sdk SDK = moduleRootManager.getSdk();
-        File kevoreeBase = resolver.resolve("org.kevoree.platform", "org.kevoree.platform.standalone", "latest", "jar", new HashSet<String>());
+
+        Set<String> urls = new HashSet<String>();
+        urls.add("http://repo1.maven.org/maven2/");
+        urls.add("http://oss.sonatype.org/content/groups/public/");
+
+        File kevoreeBase = resolver.resolve("org.kevoree.platform", "org.kevoree.platform.standalone", "latest", "jar", urls);
         if (kevoreeBase == null) {
             throw new ExecutionException("Unresolved Kevoree Runtime for version latest");
         }
@@ -46,6 +52,7 @@ public class KevScriptRunState extends JavaCommandLineState {
         parameters.getVMParametersList().add("-Dnode.name=node0");
         parameters.getVMParametersList().add("-Dnode.bootstrap=" + ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
         parameters.configureByModule(module, JavaParameters.CLASSES_ONLY);
+
         return parameters;
     }
 

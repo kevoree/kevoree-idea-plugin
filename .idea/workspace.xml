@@ -67,11 +67,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="KevScriptRunState.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="KevScriptRunState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="34" selection-start="1709" selection-end="1709" vertical-scroll-proportion="1.1392405" vertical-offset="0" max-vertical-offset="645">
-              <folding />
+            <state line="40" column="0" selection-start="1554" selection-end="1724" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+              <folding>
+                <element signature="e#1592#1600#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KevScriptRunState.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="124" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6788793" vertical-offset="135" max-vertical-offset="1860">
+              <folding>
+                <element signature="e#1390#1398#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/actions/KevCreateComponentTemplate.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/actions/KevCreateKevScriptAction.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/actions/NewKevScriptFileAction.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/actions/NewComponentTypeAction.java" />
@@ -137,6 +149,7 @@
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunConfigurationProducer.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunConfigurationType.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunState.java" />
+        <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java" />
       </list>
     </option>
   </component>
@@ -150,7 +163,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1920" />
-    <option name="height" value="878" />
+    <option name="height" value="1174" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -491,6 +504,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -711,7 +725,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1041,21 +1054,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <extension name="scalaCoverage" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1073,6 +1071,21 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
     <configuration default="false" name="KevoreePlugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -1135,14 +1148,15 @@
       <workItem from="1390316168246" duration="1396000" />
       <workItem from="1390320519185" duration="1034000" />
       <workItem from="1390321648854" duration="4295000" />
+      <workItem from="1390378908010" duration="1198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78874000" />
+    <option name="totallyTimeSpent" value="80072000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="878" extended-state="0" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1150,7 +1164,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1166,9 +1179,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2742279" sideWeight="0.74732006" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5458015" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18477103" sideWeight="0.74732006" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54528654" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1187,8 +1201,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22152779" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1215,6 +1229,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="34" selection-start="1709" selection-end="1709" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="645">
+          <folding>
+            <element signature="e#1592#1600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/openapi/roots/impl/ContentEntryImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="29" selection-start="174" selection-end="190" vertical-scroll-proportion="0.10932945" vertical-offset="0" max-vertical-offset="1890" />
@@ -1309,9 +1332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/kevscript.bnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="56" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="960">
-          <folding />
-        </state>
+        <state line="37" column="56" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/lang/PsiParser.class">
@@ -1321,9 +1342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/org/kevoree/tools/kevscript/idea/parser/KevScriptParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="63" selection-start="842" selection-end="842" vertical-scroll-proportion="0.30991736" vertical-offset="0" max-vertical-offset="6435">
-          <folding />
-        </state>
+        <state line="18" column="63" selection-start="842" selection-end="842" vertical-scroll-proportion="0.30991736" vertical-offset="0" max-vertical-offset="6435" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/lexer/KevScript.flex">
@@ -1340,9 +1359,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/lexer/KevScriptLexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="495" selection-end="509" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="11625">
-          <folding />
-        </state>
+        <state line="14" column="27" selection-start="495" selection-end="509" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="11625" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/SyntaxHighlighterColors.class">
@@ -1352,11 +1369,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/highlighter/KevScriptSyntaxHighlighter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="55" selection-start="1692" selection-end="1705" vertical-scroll-proportion="0.28892455" vertical-offset="255" max-vertical-offset="1815">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="29" column="55" selection-start="1692" selection-end="1705" vertical-scroll-proportion="0.28892455" vertical-offset="255" max-vertical-offset="1815" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/highlighter/KevScriptColorSettingsPage.java">
@@ -1402,9 +1415,7 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/org.kevoree.maven.resolver-8.jar!/org/kevoree/resolver/MavenResolver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="136" selection-start="958" selection-end="967" vertical-scroll-proportion="0.48634812" vertical-offset="0" max-vertical-offset="586">
-          <folding />
-        </state>
+        <state line="20" column="136" selection-start="958" selection-end="967" vertical-scroll-proportion="0.48634812" vertical-offset="0" max-vertical-offset="586" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfigurationSettingsEditor.java">
@@ -1416,23 +1427,12 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/execution/configurations/RunConfigurationModule.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="46" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.5673077" vertical-offset="36" max-vertical-offset="660">
-          <folding />
-        </state>
+        <state line="27" column="46" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.5673077" vertical-offset="36" max-vertical-offset="660" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fileTemplates/internal/KevScript.kevs.ft">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="283" selection-end="283" vertical-scroll-proportion="0.17470881" vertical-offset="0" max-vertical-offset="601">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="59" selection-start="2152" selection-end="2152" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1815">
-          <folding />
-        </state>
+        <state line="7" column="13" selection-start="283" selection-end="283" vertical-scroll-proportion="0.17470881" vertical-offset="0" max-vertical-offset="601" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevRunConfigurationModule.java">
@@ -1453,8 +1453,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="25" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
           <folding>
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1103#1104#0" expanded="false" />
+            <element signature="e#1148#1149#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1482,9 +1482,7 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/execution/ui/RunContentDescriptor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="33" selection-start="168" selection-end="188" vertical-scroll-proportion="0.13321492" vertical-offset="0" max-vertical-offset="1125">
-          <folding />
-        </state>
+        <state line="6" column="33" selection-start="168" selection-end="188" vertical-scroll-proportion="0.13321492" vertical-offset="0" max-vertical-offset="1125" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptProgramRunner.java">
@@ -1537,8 +1535,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="34" selection-start="1709" selection-end="1709" vertical-scroll-proportion="1.1392405" vertical-offset="0" max-vertical-offset="645">
-          <folding />
+        <state line="40" column="0" selection-start="1554" selection-end="1724" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <folding>
+            <element signature="e#1592#1600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="124" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6788793" vertical-offset="135" max-vertical-offset="1860">
+          <folding>
+            <element signature="e#1390#1398#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
