@@ -1,10 +1,12 @@
 package org.kevoree.tools.kevscript.idea.runner.prod;
 
+import com.intellij.execution.ui.ConfigurationModuleSelector;
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SettingsEditor;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -17,17 +19,25 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
 
     private JLabel kevScriptFileLocation_lbl = new JLabel("KevScript file:");
     private JTextField kevScriptFileLocation_txt = new JTextField();
+    private JComboBox moduleList = new JComboBox();
+    private ConfigurationModuleSelector moduleSelector;
+
+    private Project projet;
+
+    public KevScriptRunConfigurationSettingsEditor(Project p) {
+        projet = p;
+        moduleSelector = new ConfigurationModuleSelector(projet, moduleList);
+    }
 
     @Override
     protected void resetEditorFrom(KevScriptRunConfiguration kevScriptRunConfiguration) {
 
+        moduleSelector.reset(kevScriptRunConfiguration);
+
         if(kevScriptRunConfiguration.getConfigurationModule() != null) {
             if(kevScriptRunConfiguration.getConfigurationModule().getModule() != null) {
-                Notifications.Bus.notify(new Notification("KevPlugin", "KevDebug", "ModuleName:" + kevScriptRunConfiguration.getConfigurationModule().getModule().getName(), NotificationType.INFORMATION));
                 if(kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile()!= null) {
-                    Notifications.Bus.notify(new Notification("KevPlugin", "KevDebug", "ModuleFile:" + kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile(), NotificationType.INFORMATION));
                     if(kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath("src/main/kevs/main.kevs") != null) {
-                        Notifications.Bus.notify(new Notification("KevPlugin", "KevDebug", "KevsFile:" + kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath("src/main/kevs/main.kevs"), NotificationType.INFORMATION));
                         kevScriptRunConfiguration.kevsFile = kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath("src/main/kevs/main.kevs");
                     }
                 }
@@ -42,22 +52,18 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
     @Override
     protected void applyEditorTo(KevScriptRunConfiguration kevScriptRunConfiguration) throws ConfigurationException {
 
+        moduleSelector.applyTo(kevScriptRunConfiguration);
+
         if(kevScriptRunConfiguration.getConfigurationModule() != null) {
             if(kevScriptRunConfiguration.getConfigurationModule().getModule() != null) {
-                Notifications.Bus.notify(new Notification("KevPlugin", "KevDebug", "ModuleName:" + kevScriptRunConfiguration.getConfigurationModule().getModule().getName(), NotificationType.INFORMATION));
                 if(kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile()!= null) {
-                    Notifications.Bus.notify(new Notification("KevPlugin", "KevDebug", "ModuleFile:" + kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile(), NotificationType.INFORMATION));
                     if(kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath("src/main/kevs/main.kevs") != null) {
-                        Notifications.Bus.notify(new Notification("KevPlugin", "KevDebug", "KevsFile:" + kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath("src/main/kevs/main.kevs"), NotificationType.INFORMATION));
                         kevScriptRunConfiguration.kevsFile = kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath("src/main/kevs/main.kevs");
                     }
                 }
             }
         }
-
-
-        //kevScriptRunConfiguration.kevsFile = kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile().findFileByRelativePath( kevScriptFileLocation_txt.getText());
-    }
+  }
 
     @NotNull
     @Override
@@ -66,6 +72,7 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
         mainPanel.setLayout(new FlowLayout());
         mainPanel.add(kevScriptFileLocation_lbl);
         mainPanel.add(kevScriptFileLocation_txt);
+        mainPanel.add(moduleList);
         return mainPanel;
     }
 }

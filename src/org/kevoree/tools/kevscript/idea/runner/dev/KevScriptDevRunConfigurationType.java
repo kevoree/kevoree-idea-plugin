@@ -1,36 +1,31 @@
 package org.kevoree.tools.kevscript.idea.runner.dev;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.execution.configurations.ConfigurationType;
 import org.jetbrains.annotations.NotNull;
 import org.kevoree.tools.kevscript.idea.KevIcons;
+import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationType;
 
 import javax.swing.*;
 
 /**
  * Created by duke on 16/01/2014.
  */
-public class KevScriptRunConfigurationType implements ConfigurationType {
+public class KevScriptDevRunConfigurationType extends KevScriptRunConfigurationType {
 
     private ConfigurationFactory[] configurationFactories = new ConfigurationFactory[1];
 
-    public KevScriptRunConfigurationType() {
-        configurationFactories[0] = new KevScriptRunConfigurationFactory(this);
+    public KevScriptDevRunConfigurationType() {
+        configurationFactories[0] = new KevScriptDevRunConfigurationFactory(this);
     }
 
     @Override
     public String getDisplayName() {
-        return "KevScript Run Dev";
+        return "KevScript Run (Dev)";
     }
 
     @Override
     public String getConfigurationTypeDescription() {
         return "KevScript Dev Runner";
-    }
-
-    @Override
-    public Icon getIcon() {
-        return KevIcons.KEVS_ICON_16x16;
     }
 
     @NotNull

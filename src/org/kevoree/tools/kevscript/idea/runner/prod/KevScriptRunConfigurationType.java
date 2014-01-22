@@ -4,6 +4,7 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
 import org.jetbrains.annotations.NotNull;
 import org.kevoree.tools.kevscript.idea.KevIcons;
+import org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevRunConfigurationFactory;
 
 import javax.swing.*;
 
@@ -16,6 +17,7 @@ public class KevScriptRunConfigurationType implements ConfigurationType {
 
     public KevScriptRunConfigurationType() {
         configurationFactories[0] = new KevScriptRunConfigurationFactory(this);
+        //configurationFactories[1] = new KevScriptDevRunConfigurationFactory(this);
     }
 
     @Override

@@ -13,6 +13,7 @@ import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.kevoree.resolver.MavenResolver;
+import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunState;
 
 import java.io.File;
 import java.util.HashSet;
@@ -21,10 +22,9 @@ import java.util.Set;
 /**
  * Created by gregory.nain on 20/01/2014.
  */
-public class KevScriptRunState extends JavaCommandLineState {
+public class KevScriptDevRunState extends KevScriptRunState {
 
-
-    protected KevScriptRunState(ExecutionEnvironment environment) {
+    protected KevScriptDevRunState(ExecutionEnvironment environment) {
         super(environment);
     }
 
@@ -33,7 +33,7 @@ public class KevScriptRunState extends JavaCommandLineState {
     @Override
     protected JavaParameters createJavaParameters() throws ExecutionException {
 
-        Module module = ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+        Module module = ((KevScriptDevRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
         JavaParameters parameters = new JavaParameters();
         ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
         Sdk SDK = moduleRootManager.getSdk();
@@ -50,7 +50,7 @@ public class KevScriptRunState extends JavaCommandLineState {
         parameters.setMainClass("org.kevoree.platform.standalone.App");
         parameters.getClassPath().add(kevoreeBase);
         parameters.getVMParametersList().add("-Dnode.name=node0");
-        parameters.getVMParametersList().add("-Dnode.bootstrap=" + ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
+        parameters.getVMParametersList().add("-Dnode.bootstrap=" + ((KevScriptDevRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).kevsFile.getPath());
         parameters.configureByModule(module, JavaParameters.CLASSES_ONLY);
 
         return parameters;

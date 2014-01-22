@@ -2,16 +2,17 @@ package org.kevoree.tools.kevscript.idea.runner.prod;
 
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.actions.RunConfigurationProducer;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.openapi.util.Ref;
 import com.intellij.psi.PsiElement;
 import org.kevoree.tools.kevscript.idea.KevScriptLanguageType;
+import org.kevoree.tools.kevscript.idea.runner.dev.KevScriptDevRunConfiguration;
 
 
 /**
  * Created by gregory.nain on 17/01/2014.
  */
 public class KevScriptRunConfigurationProducer extends RunConfigurationProducer<KevScriptRunConfiguration> {
-
 
     protected KevScriptRunConfigurationProducer() {
         super(new KevScriptRunConfigurationType());

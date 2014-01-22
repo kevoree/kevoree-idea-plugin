@@ -9,11 +9,12 @@ import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptProgramRunner;
 
 /**
  * Created by gregory.nain on 20/01/2014.
  */
-public class KevScriptProgramRunner extends GenericProgramRunner {
+public class KevScriptDevProgramRunner extends KevScriptProgramRunner {
     @Nullable
     @Override
     protected RunContentDescriptor doExecute(Project project, RunProfileState runProfileState, RunContentDescriptor runContentDescriptor, ExecutionEnvironment executionEnvironment) throws ExecutionException {
@@ -38,6 +39,6 @@ public class KevScriptProgramRunner extends GenericProgramRunner {
 
     @Override
     public boolean canRun(@NotNull String s, @NotNull RunProfile runProfile) {
-        return runProfile instanceof KevScriptRunConfiguration;
+        return runProfile instanceof KevScriptDevRunConfiguration;
     }
 }

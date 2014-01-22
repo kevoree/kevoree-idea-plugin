@@ -5,18 +5,24 @@ import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationFactory;
 
 /**
  * Created by gregory.nain on 17/01/2014.
  */
-public class KevScriptRunConfigurationFactory extends ConfigurationFactory {
+public class KevScriptDevRunConfigurationFactory extends KevScriptRunConfigurationFactory {
 
-    protected KevScriptRunConfigurationFactory(@NotNull ConfigurationType type) {
+    public KevScriptDevRunConfigurationFactory(@NotNull ConfigurationType type) {
         super(type);
     }
 
     @Override
+    public String getName() {
+        return "Run (Dev Mode)";
+    }
+
+    @Override
     public RunConfiguration createTemplateConfiguration(Project project) {
-        return new KevScriptRunConfiguration(project, this, "Default KevScript Dev Runner");
+        return new KevScriptDevRunConfiguration(project, this, "Default KevScript Dev Runner");
     }
 }
