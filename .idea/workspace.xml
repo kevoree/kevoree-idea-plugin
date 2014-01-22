@@ -72,7 +72,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="40" column="0" selection-start="1554" selection-end="1724" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
               <folding>
-                <element signature="e#1592#1600#0" expanded="true" />
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,7 +81,7 @@
       <file leaf-file-name="KevScriptRunState.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="124" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6788793" vertical-offset="135" max-vertical-offset="1860">
+            <state line="29" column="87" selection-start="932" selection-end="932" vertical-scroll-proportion="0.4525862" vertical-offset="60" max-vertical-offset="1860">
               <folding>
                 <element signature="e#1390#1398#0" expanded="true" />
               </folding>
@@ -740,9 +740,9 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.22196263" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="OverrideImplement.combined" value="true" />
@@ -750,7 +750,7 @@
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesXML" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../dukeboard/kevoree/kevoree-core/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/org.kevoree.maven.resolver-10.jar!/" />
     <property name="FullScreen" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -1148,12 +1148,12 @@
       <workItem from="1390316168246" duration="1396000" />
       <workItem from="1390320519185" duration="1034000" />
       <workItem from="1390321648854" duration="4295000" />
-      <workItem from="1390378908010" duration="1198000" />
+      <workItem from="1390378908010" duration="3340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80072000" />
+    <option name="totallyTimeSpent" value="82214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
@@ -1233,7 +1233,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="34" selection-start="1709" selection-end="1709" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="645">
           <folding>
-            <element signature="e#1592#1600#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1413,11 +1413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/org.kevoree.maven.resolver-8.jar!/org/kevoree/resolver/MavenResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="136" selection-start="958" selection-end="967" vertical-scroll-proportion="0.48634812" vertical-offset="0" max-vertical-offset="586" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfigurationSettingsEditor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1155">
@@ -1537,14 +1532,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="0" selection-start="1554" selection-end="1724" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <folding>
-            <element signature="e#1592#1600#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="124" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.6788793" vertical-offset="135" max-vertical-offset="1860">
+        <state line="29" column="87" selection-start="932" selection-end="932" vertical-scroll-proportion="0.4525862" vertical-offset="60" max-vertical-offset="1860">
           <folding>
             <element signature="e#1390#1398#0" expanded="true" />
           </folding>
@@ -1608,7 +1603,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.22196263" />
               </list>
             </option>
           </splitter-proportions>
@@ -1616,10 +1611,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>org.kevoree.maven.resolver-10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.22196263" />
               </list>
             </option>
           </splitter-proportions>

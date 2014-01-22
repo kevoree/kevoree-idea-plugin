@@ -37,7 +37,7 @@ public class KevScriptRunState extends JavaCommandLineState {
 
         Set<String> urls = new HashSet<String>();
         urls.add("http://repo1.maven.org/maven2/");
-        urls.add("http://oss.sonatype.org/content/groups/public/");
+        urls.add("https://oss.sonatype.org/content/groups/public/");
 
         File kevoreeBase = resolver.resolve("org.kevoree.platform", "org.kevoree.platform.standalone", "latest", "jar", urls);
         if (kevoreeBase == null) {
