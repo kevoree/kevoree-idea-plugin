@@ -73,11 +73,18 @@
         <completion.contributor language="KevScript"
                                 implementationClass="org.kevoree.tools.kevscript.idea.ide.KevScriptCompletionContributor"/>
 
-        <!-- in progress .... -->
-        <programRunner implementation="org.kevoree.tools.kevscript.idea.runner.KevScriptProgramRunner"/>
-        <configurationType implementation="org.kevoree.tools.kevscript.idea.runner.KevScriptRunConfigurationType"/>
+        <!-- prod runner -->
+        <programRunner implementation="org.kevoree.tools.kevscript.idea.runner.prod.KevScriptProgramRunner"/>
+        <configurationType implementation="org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationType"/>
         <runConfigurationProducer
-                implementation="org.kevoree.tools.kevscript.idea.runner.KevScriptRunConfigurationProducer"/>
+                implementation="org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunConfigurationProducer"/>
+
+        <!-- dev runner -->
+        <programRunner implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptProgramRunner"/>
+        <configurationType implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptRunConfigurationType"/>
+        <runConfigurationProducer
+                implementation="org.kevoree.tools.kevscript.idea.runner.dev.KevScriptRunConfigurationProducer"/>
+
 
 
         <internalFileTemplate name="KevScript"/>

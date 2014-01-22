@@ -1,8 +1,7 @@
-package org.kevoree.tools.kevscript.idea.runner;
+package org.kevoree.tools.kevscript.idea.runner.prod;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
-import com.intellij.execution.configurations.ConfigurationTypeBase;
 import org.jetbrains.annotations.NotNull;
 import org.kevoree.tools.kevscript.idea.KevIcons;
 

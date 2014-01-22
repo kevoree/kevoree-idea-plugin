@@ -1,12 +1,10 @@
-package org.kevoree.tools.kevscript.idea.runner;
+package org.kevoree.tools.kevscript.idea.runner.dev;
 
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SettingsEditor;
-import com.intellij.openapi.ui.LabeledComponent;
-import com.intellij.ui.RawCommandLineEditor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;

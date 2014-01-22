@@ -1,4 +1,4 @@
-package org.kevoree.tools.kevscript.idea.runner;
+package org.kevoree.tools.kevscript.idea.runner.dev;
 
 import com.intellij.execution.configurations.RunConfigurationModule;
 import com.intellij.openapi.project.Project;

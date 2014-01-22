@@ -1,4 +1,4 @@
-package org.kevoree.tools.kevscript.idea.runner;
+package org.kevoree.tools.kevscript.idea.runner.prod;
 
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;

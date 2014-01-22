@@ -1,31 +1,16 @@
-package org.kevoree.tools.kevscript.idea.runner;
+package org.kevoree.tools.kevscript.idea.runner.prod;
 
 import com.intellij.execution.ExecutionException;
-import com.intellij.execution.configurations.CommandLineState;
 import com.intellij.execution.configurations.JavaCommandLineState;
 import com.intellij.execution.configurations.JavaParameters;
-import com.intellij.execution.process.OSProcessHandler;
-import com.intellij.execution.process.ProcessHandler;
-import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.runners.ExecutionEnvironment;
-import com.intellij.execution.ui.ConsoleView;
-import com.intellij.execution.ui.ConsoleViewContentType;
-import com.intellij.openapi.compiler.*;
-import com.intellij.openapi.compiler.Compiler;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.kevoree.resolver.MavenResolver;
 
 import java.io.File;
-import java.io.OutputStream;
 import java.util.HashSet;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
 
 /**
  * Created by gregory.nain on 20/01/2014.
@@ -48,18 +33,10 @@ public class KevScriptRunState extends JavaCommandLineState {
         Module module = ((KevScriptRunConfiguration)getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
         ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
         Sdk SDK = moduleRootManager.getSdk();
-       /*
-        if(module == null) {
-            module = (Module) getEnvironment().getDataContext().getData("module");
-        }*/
-
-
-        //
         File kevoreeBase = resolver.resolve("org.kevoree.platform","org.kevoree.platform.standalone","latest","jar",new HashSet<String>());
         if(kevoreeBase == null){
             throw new ExecutionException("Unresolved Kevoree Runtime for version latest");
         }
-
         parameters.setJdk(SDK);
         parameters.setMainClass("org.kevoree.platform.standalone.App");
         parameters.getClassPath().add(kevoreeBase);
