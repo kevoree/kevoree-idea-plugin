@@ -29,9 +29,10 @@ public class KevScriptRunState extends JavaCommandLineState {
     protected JavaParameters createJavaParameters() throws ExecutionException {
 
         JavaParameters parameters = new JavaParameters();
+        KevScriptRunConfiguration runConfig = ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration());
 
         //Tries to collect the module, to get the output folder
-        Module module = ((KevScriptRunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration()).getConfigurationModule().getModule();
+        Module module = runConfig.getConfigurationModule().getModule();
         ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
         Sdk SDK = moduleRootManager.getSdk();
 
@@ -39,9 +40,9 @@ public class KevScriptRunState extends JavaCommandLineState {
         urls.add("http://repo1.maven.org/maven2/");
         urls.add("https://oss.sonatype.org/content/groups/public/");
 
-        File kevoreeBase = resolver.resolve("org.kevoree.platform", "org.kevoree.platform.standalone", "latest", "jar", urls);
+        File kevoreeBase = resolver.resolve("org.kevoree.platform", "org.kevoree.platform.standalone", runConfig.kevoreeRuntimeVersion, "jar", urls);
         if (kevoreeBase == null) {
-            throw new ExecutionException("Unresolved Kevoree Runtime for version latest");
+            throw new ExecutionException("Unresolved Kevoree Runtime for version " + runConfig + runConfig.kevoreeRuntimeVersion);
         }
         parameters.setJdk(SDK);
         parameters.setMainClass("org.kevoree.platform.standalone.App");

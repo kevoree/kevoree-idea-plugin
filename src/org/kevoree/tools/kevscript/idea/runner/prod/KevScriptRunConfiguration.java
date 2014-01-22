@@ -18,8 +18,12 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.kevoree.resolver.MavenResolver;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.SortedSet;
 
 /**
  * Created by gregory.nain on 17/01/2014.
@@ -28,10 +32,22 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
 
     public VirtualFile kevsFile;
     public String moduleName;
+    public String kevoreeRuntimeVersion;
+
+
+    protected static final MavenResolver resolver = new MavenResolver();
+    public SortedSet<String> availableRuntimeVersions;
 
 
     protected KevScriptRunConfiguration(Project project, ConfigurationFactory factory, String name) {
         super(name, new KevRunConfigurationModule(project), factory);
+
+        Set<String> urls = new HashSet<String>();
+        urls.add("http://repo1.maven.org/maven2/");
+        urls.add("http://oss.sonatype.org/content/groups/public/");
+
+        availableRuntimeVersions = resolver.listVersion("org.kevoree.platform", "org.kevoree.platform.standalone", "jar", urls);
+        kevoreeRuntimeVersion = availableRuntimeVersions.first();
     }
 
     @NotNull
@@ -85,6 +101,9 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
             }
         }
 
+        if(element.getChild("KevoreeRuntime") != null) {
+            kevoreeRuntimeVersion = element.getChild("KevoreeRuntime").getAttributeValue("version");
+        }
 
         getConfigurationModule().readExternal(element);
     }
@@ -103,6 +122,12 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
             Element moduleElem = new Element("Module");
             moduleElem.setAttribute("name", getConfigurationModule().getModule().getName());
             element.addContent(moduleElem);
+        }
+
+        if(kevoreeRuntimeVersion != null) {
+            Element versionElem = new Element("KevoreeRuntime");
+            versionElem.setAttribute("version", kevoreeRuntimeVersion);
+            element.addContent(versionElem);
         }
 
         getConfigurationModule().writeExternal(element);

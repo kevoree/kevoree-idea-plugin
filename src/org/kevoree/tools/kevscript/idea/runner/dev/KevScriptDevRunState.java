@@ -1,17 +1,11 @@
 package org.kevoree.tools.kevscript.idea.runner.dev;
 
 import com.intellij.execution.ExecutionException;
-import com.intellij.execution.configurations.JavaCommandLineState;
 import com.intellij.execution.configurations.JavaParameters;
 import com.intellij.execution.runners.ExecutionEnvironment;
-import com.intellij.openapi.compiler.CompileContext;
-import com.intellij.openapi.compiler.CompileStatusNotification;
-import com.intellij.openapi.compiler.CompilerManager;
-import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import org.kevoree.resolver.MavenResolver;
 import org.kevoree.tools.kevscript.idea.runner.prod.KevScriptRunState;
 
