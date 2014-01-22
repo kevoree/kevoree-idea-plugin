@@ -28,6 +28,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="org.kevoree.maven.resolver-14" level="project" />
+    <orderEntry type="library" name="org.kevoree.maven.resolver-15" level="project" />
   </component>
 </module>
 
