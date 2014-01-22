@@ -70,10 +70,8 @@
       <file leaf-file-name="KevScriptRunState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="134" selection-start="1694" selection-end="1715" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="2375">
-              <folding>
-                <element signature="e#1447#1455#0" expanded="true" />
-              </folding>
+            <state line="42" column="134" selection-start="1694" selection-end="1715" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2040">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,7 +79,7 @@
       <file leaf-file-name="KevScriptDevRunConfiguration.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptDevRunConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="13" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="589">
+            <state line="27" column="13" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -90,7 +88,7 @@
       <file leaf-file-name="KevScriptDevRunConfigurationSettingsEditor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptDevRunConfigurationSettingsEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+            <state line="17" column="13" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="435">
               <folding />
             </state>
           </provider>
@@ -99,7 +97,7 @@
       <file leaf-file-name="SpringUtilities.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/utils/SpringUtilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="13" selection-start="1945" selection-end="1945" vertical-scroll-proportion="0.0" vertical-offset="586" max-vertical-offset="4313">
+            <state line="41" column="13" selection-start="1945" selection-end="1945" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="3435">
               <folding />
             </state>
           </provider>
@@ -108,10 +106,8 @@
       <file leaf-file-name="KevScriptDevRunState.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptDevRunState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1295" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="65" max-vertical-offset="1121">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="34" column="0" selection-start="1295" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="885">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,25 +115,30 @@
       <file leaf-file-name="KevScriptRunConfigurationSettingsEditor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfigurationSettingsEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="2863" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="1566" max-vertical-offset="2945">
+            <state line="62" column="0" selection-start="2863" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="2325">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KevoreeVersionSelector.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/ui/KevoreeVersionSelector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="71" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="1395">
               <folding>
+                <element signature="e#0#3176#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#1614#1622#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KevoreeVersionSelector.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/ui/KevoreeVersionSelector.java">
+      <file leaf-file-name="plugin.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="76" selection-start="2407" selection-end="2407" vertical-scroll-proportion="0.8280543" vertical-offset="774" max-vertical-offset="1805">
-              <folding>
-                <element signature="e#0#3176#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#1614#1622#0" expanded="true" />
-                <element signature="e#2680#2681#0" expanded="true" />
-                <element signature="e#2712#2713#0" expanded="true" />
-              </folding>
+            <state line="23" column="45" selection-start="812" selection-end="812" vertical-scroll-proportion="-1.5056434" vertical-offset="1012" max-vertical-offset="1455">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,7 +146,7 @@
       <file leaf-file-name="KevScriptRunConfiguration.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="65" selection-start="2002" selection-end="2002" vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="2280">
+            <state line="49" column="65" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="2445">
               <folding />
             </state>
           </provider>
@@ -199,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/parser/GeneratedParserUtilBase.java" />
         <option value="$PROJECT_DIR$/src/fileTemplates/internal/KevScript.kevs.ft" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/KevScriptRunState.java" />
-        <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptProgramRunner.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunConfiguration.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptRunConfigurationFactory.java" />
@@ -212,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfiguration.java" />
         <option value="$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/ui/KevoreeVersionSelector.java" />
+        <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
       </list>
     </option>
   </component>
@@ -227,7 +228,6 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="1174" />
@@ -963,10 +963,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -976,14 +972,6 @@
       <module name="org.kevoree.tools.idea.plugin" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
       <method />
     </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
@@ -1001,7 +989,12 @@
       <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1132,40 +1125,41 @@
       <workItem from="1390320519185" duration="1034000" />
       <workItem from="1390321648854" duration="4295000" />
       <workItem from="1390378908010" duration="3340000" />
+      <workItem from="1390398862157" duration="157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82214000" />
+    <option name="totallyTimeSpent" value="82371000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="22" width="1920" height="1174" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286445" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32656828" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2742279" sideWeight="0.25267994" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18477103" sideWeight="0.74732006" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5443623" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5434381" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1184,15 +1178,15 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22152779" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -1212,12 +1206,35 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfigurationSettingsEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="2863" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="2325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/ui/KevoreeVersionSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="76" selection-start="2407" selection-end="2407" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1425">
+          <folding>
+            <element signature="e#0#3176#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1614#1622#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="65" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="2445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="2356">
-          <folding>
-            <element signature="e#1447#1455#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1427,13 +1444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="16" selection-start="3792" selection-end="3792" vertical-scroll-proportion="0.0" vertical-offset="671" max-vertical-offset="1515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/execution/ui/RunContentDescriptor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="33" selection-start="168" selection-end="188" vertical-scroll-proportion="0.13321492" vertical-offset="0" max-vertical-offset="1125" />
@@ -1442,17 +1452,13 @@
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptDevRunState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1295" selection-end="1592" vertical-scroll-proportion="0.0" vertical-offset="65" max-vertical-offset="1121">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/execution/ui/ConfigurationModuleSelector.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="197" selection-end="197" vertical-scroll-proportion="0.089962125" vertical-offset="0" max-vertical-offset="1056">
-          <folding />
-        </state>
+        <state line="6" column="42" selection-start="197" selection-end="197" vertical-scroll-proportion="0.089962125" vertical-offset="0" max-vertical-offset="1056" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/dev/KevScriptDevRunConfiguration.java">
@@ -1472,25 +1478,19 @@
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfigurationSettingsEditor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="0" selection-start="2863" selection-end="2863" vertical-scroll-proportion="0.0" vertical-offset="2155" max-vertical-offset="2945">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/org.kevoree.maven.resolver-10.jar!/org/kevoree/resolver/MavenResolver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.7865707" vertical-offset="90" max-vertical-offset="532">
-          <folding />
-        </state>
+        <state line="23" column="0" selection-start="1220" selection-end="1220" vertical-scroll-proportion="0.7865707" vertical-offset="90" max-vertical-offset="532" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="134" selection-start="1694" selection-end="1715" vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="2375">
-          <folding>
-            <element signature="e#1447#1455#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1503,21 +1503,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/runner/prod/KevScriptRunConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="65" selection-start="2002" selection-end="2002" vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="2280">
+        <state line="49" column="65" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="2445">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kevoree/tools/kevscript/idea/ui/KevoreeVersionSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="76" selection-start="2407" selection-end="2407" vertical-scroll-proportion="0.8280543" vertical-offset="774" max-vertical-offset="1805">
+        <state line="36" column="71" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="1395">
           <folding>
             <element signature="e#0#3176#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#1614#1622#0" expanded="true" />
-            <element signature="e#2680#2681#0" expanded="true" />
-            <element signature="e#2712#2713#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="45" selection-start="812" selection-end="812" vertical-scroll-proportion="-1.5056434" vertical-offset="1012" max-vertical-offset="1455">
+          <folding />
         </state>
       </provider>
     </entry>
