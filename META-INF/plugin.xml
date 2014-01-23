@@ -17,7 +17,7 @@
             ]]>
     </change-notes>
 
-    <idea-version since-build="107.105"/>
+    <idea-version since-build="133.000"/>
     <category>Custom Languages</category>
     <resource-bundle>org.kevoree.idea.KevBundle</resource-bundle>
     <depends>com.intellij</depends>
@@ -34,6 +34,8 @@
     </project-components>
 
     <actions>
+
+
 
         <group id="KevPlugin.ActionGroup" popup="true" text="Kevoree" description="Kev actions"
                icon="/icons/kevs_16x16.png">
@@ -58,6 +60,10 @@
                     description="Create a new Kevoree Group in the current project"/>
 
         </group>
+        <action id="OpenJavaKevoreeEditor" class="org.kevoree.idea.editor.OpenJavaKevoreeEditor"
+                text="OpenJavaKevoreeEditor" description="OpenJavaKevoreeEditor">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
