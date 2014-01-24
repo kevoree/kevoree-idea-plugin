@@ -81,6 +81,9 @@
         <completion.contributor language="KevScript"
                                 implementationClass="org.kevoree.idea.ide.KevScriptCompletionContributor"/>
 
+        <stepsBeforeRunProvider implementation="org.kevoree.idea.runner.dev.KevBeforeRunTaskProvider"/>
+
+
         <!-- prod runner -->
         <programRunner implementation="org.kevoree.idea.runner.prod.KevScriptProgramRunner"/>
         <configurationType implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationType"/>
