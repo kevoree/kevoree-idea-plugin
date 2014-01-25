@@ -26,15 +26,16 @@
     <depends>org.jetbrains.idea.maven</depends>
 
     <application-components>
-        <!-- Add your application components here -->
     </application-components>
 
+
     <project-components>
-        <!-- Add your project components here -->
+        <component>
+            <implementation-class>org.kevoree.idea.editor.KevoreeEditorComponent</implementation-class>
+        </component>
     </project-components>
 
     <actions>
-
 
 
         <group id="KevPlugin.ActionGroup" popup="true" text="Kevoree" description="Kev actions"
@@ -61,18 +62,30 @@
 
         </group>
         <action id="OpenJavaKevoreeEditor" class="org.kevoree.idea.editor.OpenJavaKevoreeEditor"
-                text="OpenJavaKevoreeEditor" description="OpenJavaKevoreeEditor">
+                text="Open Kevoree Editor Frame" description="OpenJavaKevoreeEditor">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
+        <action id="DisplayInKevoreeEditorPanel" class="org.kevoree.idea.editor.DisplayInKevoreeEditorPanel"
+                text="Display in Kevoree Panel" description="DisplayInKevoreeEditorPanel">
+            <add-to-group group-id="RunContextGroup" anchor="last"/>
+        </action>
+
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
+
+        <toolWindow id="KevoreeEditor" icon="/icons/kevs_16x16.png" anchor="right" factoryClass="org.kevoree.idea.editor.KevoreeEditorToolWindowFactory"/>
+
         <fileTypeFactory implementation="org.kevoree.idea.KevScriptFileTypeFactory"/>
         <lang.parserDefinition language="KevScript"
                                implementationClass="org.kevoree.idea.KevScriptParserDefinition"/>
         <lang.syntaxHighlighterFactory key="KevScript"
                                        implementationClass="org.kevoree.idea.highlighter.KevScriptSyntaxHighlighterFactory"/>
         <colorSettingsPage implementation="org.kevoree.idea.highlighter.KevScriptColorSettingsPage"/>
+
+         <!--
+        <fileEditorProvider implementation="org.kevoree.idea.editor.KevoreeSwingEditorProvider"/>
+         -->
 
         <!-- wizards -->
         <moduleBuilder builderClass="org.kevoree.idea.ide.KevoreeModuleBuilder"/>
