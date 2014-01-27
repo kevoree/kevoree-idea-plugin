@@ -25,7 +25,7 @@ public class KevoreeEditorComponent extends AbstractProjectComponent {
 
     public static KevoreeEditorComponent getInstance(final Project project) {
         if (keveditorCL == null) {
-            File kevoreeEditor = KevoreeMavenResolver.resolve("org.kevoree.tools", "org.kevoree.tools.ui.editor", "latest", "jar");
+            File kevoreeEditor = KevoreeMavenResolver.resolve("org.kevoree.tools", "org.kevoree.tools.ui.editor", "release", "jar");
             if (kevoreeEditor != null) {
                 try {
                     keveditorCL = new URLClassLoader(new URL[]{kevoreeEditor.toURI().toURL()});
