@@ -1,8 +1,10 @@
 package org.kevoree.idea.runner.prod;
 
+import com.intellij.debugger.engine.DebuggerUtils;
+import com.intellij.debugger.impl.GenericDebuggerRunner;
 import com.intellij.execution.ExecutionException;
-import com.intellij.execution.configurations.RunProfile;
-import com.intellij.execution.configurations.RunProfileState;
+import com.intellij.execution.configurations.*;
+import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.GenericProgramRunner;
 import com.intellij.execution.ui.RunContentDescriptor;
@@ -13,24 +15,45 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Created by gregory.nain on 20/01/2014.
  */
-public class KevScriptProgramRunner extends GenericProgramRunner {
+public class KevScriptProgramRunner extends GenericDebuggerRunner {
     @Nullable
     @Override
     protected RunContentDescriptor doExecute(Project project, RunProfileState runProfileState, RunContentDescriptor runContentDescriptor, ExecutionEnvironment executionEnvironment) throws ExecutionException {
-        //getEnvironment().getContentToReuse().getExecutionConsole()
-        System.out.println("Wait 3!");
-        return null;
+
+        final JavaCommandLine javaCommandLine = (JavaCommandLine)runProfileState;
+        final JavaParameters params = javaCommandLine.getJavaParameters();
+
+        String address = null;
+        try {
+            for (String s : params.getProgramParametersList().getList()) {
+                if (s.startsWith("run-")) {
+                    // Application will be run in forked VM
+                    address = DebuggerUtils.getInstance().findAvailableDebugAddress(true);
+                    params.getProgramParametersList().replaceOrAppend(s, s + " --debug --debugPort=" + address);
+                    break;
+                }
+            }
+        }
+        catch (ExecutionException ignored) {
+        }
+
+        if (address == null) {
+            return super.createContentDescriptor(project, runProfileState, runContentDescriptor, executionEnvironment);
+        }
+
+        RemoteConnection connection = new RemoteConnection(true, "127.0.0.1", address, false);
+        return attachVirtualMachine(project, runProfileState, runContentDescriptor, executionEnvironment, connection, true);
+
+        //return null;
     }
 
     @Override
     public void execute(@NotNull ExecutionEnvironment environment) throws ExecutionException {
-        System.out.println("Wait !");
         super.execute(environment);
     }
 
     @Override
     public void execute(@NotNull ExecutionEnvironment env, @Nullable Callback callback) throws ExecutionException {
-        System.out.println("Wait 2!");
         super.execute(env, callback);
     }
 
