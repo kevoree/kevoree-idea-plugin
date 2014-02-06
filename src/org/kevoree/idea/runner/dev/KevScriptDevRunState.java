@@ -45,7 +45,7 @@ public class KevScriptDevRunState extends KevScriptRunState {
         parameters.setJdk(SDK);
 
         File kevoreeAnnotator = KevoreeMavenResolver.resolve("org.kevoree.tools", "org.kevoree.tools.annotator.standalone", runConfig.kevoreeRuntimeVersion, "jar");
-        if (kevoreeAnnotator == null) {
+        if (kevoreeAnnotator == null || (CompilerPaths.getModuleOutputDirectory(module, false) == null)) {
             parameters.setMainClass("org.kevoree.platform.standalone.App");
         } else {
             parameters.getClassPath().add(kevoreeAnnotator);
@@ -53,6 +53,7 @@ public class KevScriptDevRunState extends KevScriptRunState {
             parameters.getProgramParametersList().add(CompilerPaths.getModuleOutputDirectory(module, false).getPath());
             parameters.getProgramParametersList().add("org.kevoree.platform.standalone.App");
         }
+
         return parameters;
     }
 
