@@ -17,7 +17,7 @@ public class KevScriptDevProgramRunner extends KevScriptProgramRunner {
     @Nullable
     @Override
     protected RunContentDescriptor doExecute(Project project, RunProfileState runProfileState, RunContentDescriptor runContentDescriptor, ExecutionEnvironment executionEnvironment) throws ExecutionException {
-        return null;
+        return super.doExecute(project, runProfileState, runContentDescriptor, executionEnvironment);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class KevScriptDevProgramRunner extends KevScriptProgramRunner {
     @NotNull
     @Override
     public String getRunnerId() {
-        return "KevScript Dev Runner";
+        return "KevScript Runner";
     }
 
     @Override

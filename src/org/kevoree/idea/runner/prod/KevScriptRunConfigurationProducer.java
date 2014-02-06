@@ -23,7 +23,7 @@ public class KevScriptRunConfigurationProducer extends RunConfigurationProducer<
         if(configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null && configurationContext.getLocation().getVirtualFile().getExtension() != null) {
             if(configurationContext.getLocation().getVirtualFile().getExtension().equals(KevScriptLanguageType.DEFAULT_EXTENSION)){
                 kevScriptRunConfiguration.kevsFile = configurationContext.getLocation().getVirtualFile();
-                kevScriptRunConfiguration.setName("Run " + configurationContext.getModule().getName());
+                kevScriptRunConfiguration.setName("Run " + configurationContext.getModule().getName()+" prod");
                 kevScriptRunConfiguration.setModule(configurationContext.getModule());
                 return true;
             }
@@ -34,7 +34,7 @@ public class KevScriptRunConfigurationProducer extends RunConfigurationProducer<
     //Checks if a RunConfiguration already exists for this project
     @Override
     public boolean isConfigurationFromContext(KevScriptRunConfiguration kevScriptRunConfiguration, ConfigurationContext configurationContext) {
-        return kevScriptRunConfiguration.getName().equals("Run " + configurationContext.getModule().getName());
+        return kevScriptRunConfiguration.getName().equals("Run " + configurationContext.getModule().getName()+" prod");
     }
 
 

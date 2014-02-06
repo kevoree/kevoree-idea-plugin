@@ -100,15 +100,16 @@
         <stepsBeforeRunProvider implementation="org.kevoree.idea.runner.dev.KevBeforeRunTaskProvider"/>
          -->
 
+        <!-- dev runner -->
+        <programRunner implementation="org.kevoree.idea.runner.dev.KevScriptDevProgramRunner"/>
+        <configurationType implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationType"/>
+        <runConfigurationProducer implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationProducer"/>
+
         <!-- prod runner -->
         <programRunner implementation="org.kevoree.idea.runner.prod.KevScriptProgramRunner"/>
         <configurationType implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationType"/>
         <runConfigurationProducer implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationProducer"/>
 
-        <!-- dev runner -->
-        <programRunner implementation="org.kevoree.idea.runner.dev.KevScriptDevProgramRunner"/>
-        <configurationType implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationType"/>
-        <runConfigurationProducer implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationProducer"/>
 
         <internalFileTemplate name="KevScript"/>
         <internalFileTemplate name="KevComponent"/>

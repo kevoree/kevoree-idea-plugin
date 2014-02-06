@@ -4,6 +4,7 @@ import com.intellij.debugger.engine.DebuggerUtils;
 import com.intellij.debugger.impl.GenericDebuggerRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.*;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.GenericProgramRunner;
@@ -43,8 +44,6 @@ public class KevScriptProgramRunner extends GenericDebuggerRunner {
 
         RemoteConnection connection = new RemoteConnection(true, "127.0.0.1", address, false);
         return attachVirtualMachine(project, runProfileState, runContentDescriptor, executionEnvironment, connection, true);
-
-        //return null;
     }
 
     @Override
@@ -60,12 +59,11 @@ public class KevScriptProgramRunner extends GenericDebuggerRunner {
     @NotNull
     @Override
     public String getRunnerId() {
-        return "KevScript Runner";
+        return "KevScript Runner Production Only";
     }
 
     @Override
     public boolean canRun(@NotNull String s, @NotNull RunProfile runProfile) {
-        //System.out.println("Can execute: " + s + " -> " + runProfile.getClass() + "("+ runProfile.toString()+")");
         return runProfile instanceof KevScriptRunConfiguration;
     }
 }

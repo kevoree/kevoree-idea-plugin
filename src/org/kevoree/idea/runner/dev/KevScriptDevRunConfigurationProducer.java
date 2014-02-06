@@ -16,12 +16,6 @@ public class KevScriptDevRunConfigurationProducer extends RunConfigurationProduc
         super(new KevScriptDevRunConfigurationType());
     }
 
-
-    /*protected KevScriptDevRunConfigurationProducer() {
-        super(KevScriptRunConfigurationType.getInstance());
-    }
-    */
-
     //Checks if the target of the click is a kevScript file
     @Override
     protected boolean setupConfigurationFromContext(KevScriptDevRunConfiguration kevScriptDevRunConfiguration, ConfigurationContext configurationContext, Ref<PsiElement> psiElementRef) {
@@ -29,7 +23,7 @@ public class KevScriptDevRunConfigurationProducer extends RunConfigurationProduc
         if(configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null && configurationContext.getLocation().getVirtualFile().getExtension() != null) {
             if(configurationContext.getLocation().getVirtualFile().getExtension().equals(KevScriptLanguageType.DEFAULT_EXTENSION)){
                 kevScriptDevRunConfiguration.kevsFile = configurationContext.getLocation().getVirtualFile();
-                kevScriptDevRunConfiguration.setName("Run (Dev) " + configurationContext.getModule().getName());
+                kevScriptDevRunConfiguration.setName("Run " + configurationContext.getModule().getName());
                 kevScriptDevRunConfiguration.setModule(configurationContext.getModule());
                 return true;
             }
@@ -40,6 +34,6 @@ public class KevScriptDevRunConfigurationProducer extends RunConfigurationProduc
     //Checks if a RunConfiguration already exists for this project
     @Override
     public boolean isConfigurationFromContext(KevScriptDevRunConfiguration kevScriptDevRunConfiguration, ConfigurationContext configurationContext) {
-        return kevScriptDevRunConfiguration.getName().equals("Run (Dev) " + configurationContext.getModule().getName());
+        return kevScriptDevRunConfiguration.getName().equals("Run " + configurationContext.getModule().getName());
     }
 }

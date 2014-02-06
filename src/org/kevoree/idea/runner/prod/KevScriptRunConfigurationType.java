@@ -21,12 +21,12 @@ public class KevScriptRunConfigurationType implements ConfigurationType {
 
     @Override
     public String getDisplayName() {
-        return "KevScript Run";
+        return "KevScript Run (Production Only)";
     }
 
     @Override
     public String getConfigurationTypeDescription() {
-        return "Kevoree Script Runner";
+        return "Kevoree Script Runner Prod";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class KevScriptRunConfigurationType implements ConfigurationType {
     @NotNull
     @Override
     public String getId() {
-        return "kevsrunner";
+        return "kevsrunner_prod";
     }
 
     @Override

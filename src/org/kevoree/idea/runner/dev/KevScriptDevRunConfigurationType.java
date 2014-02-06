@@ -17,18 +17,18 @@ public class KevScriptDevRunConfigurationType extends KevScriptRunConfigurationT
 
     @Override
     public String getDisplayName() {
-        return "KevScript Run (Dev)";
+        return "KevScript Run";
     }
 
     @Override
     public String getConfigurationTypeDescription() {
-        return "KevScript Dev Runner";
+        return "KevScript Runner";
     }
 
     @NotNull
     @Override
     public String getId() {
-        return "KevscriptDevRunner";
+        return "KevscriptRunner";
     }
 
     @Override
