@@ -13,6 +13,7 @@
       ]]></description>
 
     <change-notes><![CDATA[
+    V3 : Add debug support<br/>
     V2 : This second version finalize the dev mode and integrate graphical editor. As result, developers can now directly run their code without pre build with mvn install.<br/>
     V1 : This is the first BETA release of the plugin.<br/>
       It contains only new features ! :-)
@@ -106,10 +107,11 @@
         <runConfigurationProducer implementation="org.kevoree.idea.runner.dev.KevScriptDevRunConfigurationProducer"/>
 
         <!-- prod runner -->
+        <!--
         <programRunner implementation="org.kevoree.idea.runner.prod.KevScriptProgramRunner"/>
         <configurationType implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationType"/>
         <runConfigurationProducer implementation="org.kevoree.idea.runner.prod.KevScriptRunConfigurationProducer"/>
-
+         -->
 
         <internalFileTemplate name="KevScript"/>
         <internalFileTemplate name="KevComponent"/>
