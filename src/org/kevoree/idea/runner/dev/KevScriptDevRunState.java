@@ -39,7 +39,7 @@ public class KevScriptDevRunState extends KevScriptRunState {
         }
         //common params
         parameters.getClassPath().add(kevoreeBase);
-        parameters.getVMParametersList().add("-Dnode.name=node0");
+        parameters.getVMParametersList().add("-Dnode.name=" + runConfig.nodeName);
         parameters.getVMParametersList().add("-Dnode.bootstrap=" + runConfig.kevsFile.getPath());
         parameters.configureByModule(module, JavaParameters.CLASSES_ONLY);
         parameters.setJdk(SDK);

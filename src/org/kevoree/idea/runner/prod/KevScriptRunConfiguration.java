@@ -31,6 +31,7 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
     public VirtualFile kevsFile;
     public String moduleName;
     public String kevoreeRuntimeVersion;
+    public String nodeName = "node0";
 
     protected static final MavenResolver resolver = new MavenResolver();
     public SortedSet<String> availableRuntimeVersions;
@@ -119,6 +120,10 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
             kevoreeRuntimeVersion = element.getChild("KevoreeRuntime").getAttributeValue("version");
         }
 
+        if(element.getChild("NodeName") != null) {
+            nodeName = element.getChild("NodeName").getAttributeValue("nodeName");
+        }
+
         getConfigurationModule().readExternal(element);
     }
 
@@ -147,6 +152,12 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
             Element versionElem = new Element("KevoreeRuntime");
             versionElem.setAttribute("version", kevoreeRuntimeVersion);
             element.addContent(versionElem);
+        }
+
+        if(nodeName != null) {
+            Element nodeNameElem = new Element("NodeName");
+            nodeNameElem.setAttribute("nodeName", kevoreeRuntimeVersion);
+            element.addContent(nodeNameElem);
         }
 
         getConfigurationModule().writeExternal(element);

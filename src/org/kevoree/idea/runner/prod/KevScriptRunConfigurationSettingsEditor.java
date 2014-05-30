@@ -25,11 +25,13 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
     private JLabel kevScriptFileLocation_lbl = new JLabel("KevScript file:");
     private JLabel module_lbl = new JLabel("Module:");
     private JLabel kevoreeVersions_lbl = new JLabel("Runtime Version:");
+    private JLabel nodeName_lbl = new JLabel("Node Name:");
     //private JTextField kevScriptFileLocation_txt = new JTextField();
     private TextFieldWithBrowseButton kevScriptFileLocation_txt =  new TextFieldWithBrowseButton();
     private FileChooserDescriptor kevsFileChooserDescriptor = new KevsFileChooserDescriptor();
     private ComboBox module_lst = new ComboBox();
     private ConfigurationModuleSelector moduleSelector;
+    private JTextField nodeName_txt;
 
     private ComboBox kevoreeVersions_lst = new ComboBox();
     private KevoreeVersionSelector kevoreeVersionsSelector;
@@ -46,6 +48,8 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
         kevoreeVersionsSelector = new KevoreeVersionSelector(projet, kevoreeVersions_lst);
         kevoreeVersions_lst.setEditable(true);
 
+        nodeName_txt = new JTextField();
+
     }
 
 
@@ -54,6 +58,8 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
 
         moduleSelector.reset(kevScriptRunConfiguration);
         kevoreeVersionsSelector.reset(kevScriptRunConfiguration);
+
+        nodeName_txt.setText(kevScriptRunConfiguration.nodeName);
 
         if(kevScriptRunConfiguration.getConfigurationModule().getModule() != null) {
             kevsFileChooserDescriptor.setRoots(kevScriptRunConfiguration.getConfigurationModule().getModule().getModuleFile());
@@ -80,6 +86,7 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
         VirtualFile kevsVirtualFile = VirtualFileManager.getInstance().findFileByUrl((kevScriptFileLocation_txt.getText().startsWith("file://")?"":"file://") + kevScriptFileLocation_txt.getText());
 
         kevScriptRunConfiguration.kevsFile = kevsVirtualFile;
+        kevScriptRunConfiguration.nodeName = nodeName_txt.getText();
 
     }
 
@@ -98,13 +105,18 @@ public class KevScriptRunConfigurationSettingsEditor extends SettingsEditor<KevS
         kevScriptFileLocation_lbl.setLabelFor(kevScriptFileLocation_txt);
         mainPanel.add(kevScriptFileLocation_txt);
 
+        //Node Name text field
+        mainPanel.add(nodeName_lbl);
+        nodeName_lbl.setLabelFor(nodeName_txt);
+        mainPanel.add(nodeName_txt);
+
         //Kevoree Runtime Version selector
         mainPanel.add(kevoreeVersions_lbl);
         kevoreeVersions_lbl.setLabelFor(kevoreeVersions_lst);
         mainPanel.add(kevoreeVersions_lst);
 
         SpringUtilities.makeCompactGrid(mainPanel,
-                3, 2, //rows, cols
+                4, 2, //rows, cols
                 6, 6,        //initX, initY
                 6, 6);       //xPad, yPad
 
