@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/org.kevoree.idea.plugin.iml" filepath="$PROJECT_DIR$/org.kevoree.idea.plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../KevoreeRepos/basic-maven-resolver/org.kevoree.maven.resolver.iml" filepath="$PROJECT_DIR$/../../KevoreeRepos/basic-maven-resolver/org.kevoree.maven.resolver.iml" />
     </modules>
   </component>
 </project>

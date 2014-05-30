@@ -27,6 +27,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="org.kevoree.idea.plugin" target="1.6" />
+      <module name="org.kevoree.maven.resolver" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

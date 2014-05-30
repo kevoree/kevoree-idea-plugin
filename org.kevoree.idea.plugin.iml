@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="IDEA IU-JDK1.7" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
@@ -27,9 +27,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="org.kevoree.maven.resolver-14" level="project" />
-    <orderEntry type="library" name="org.kevoree.maven.resolver-15" level="project" />
-    <orderEntry type="library" name="org.kevoree.maven.resolver-16" level="project" />
+    <orderEntry type="library" name="org.kevoree.maven.resolver-18" level="project" />
   </component>
 </module>
 
