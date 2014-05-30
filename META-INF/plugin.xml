@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>3</version>
+    <version>4</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
@@ -13,6 +13,8 @@
       ]]></description>
 
     <change-notes><![CDATA[
+    V4 : Add Node template generattion action<br/>
+         Add node name parameter to runners<br/>
     V3 : Add debug support<br/>
     V2 : This second version finalize the dev mode and integrate graphical editor. As result, developers can now directly run their code without pre build with mvn install.<br/>
     V1 : This is the first BETA release of the plugin.<br/>
@@ -62,6 +64,10 @@
             <action id="Kevoree.NewGroupTypeAction"
                     class="org.kevoree.idea.actions.NewGroupTypeAction" text="Group"
                     description="Create a new Kevoree Group in the current project"/>
+
+            <action id="Kevoree.NewNodeTypeAction"
+                    class="org.kevoree.idea.actions.NewNodeTypeAction" text="Node"
+                    description="Create a new Kevoree Node in the current project"/>
 
         </group>
         <action id="OpenJavaKevoreeEditor" class="org.kevoree.idea.editor.OpenJavaKevoreeEditor"
@@ -117,6 +123,7 @@
         <internalFileTemplate name="KevComponent"/>
         <internalFileTemplate name="KevChannel"/>
         <internalFileTemplate name="KevGroup"/>
+        <internalFileTemplate name="KevNode"/>
     </extensions>
 
 </idea-plugin>
