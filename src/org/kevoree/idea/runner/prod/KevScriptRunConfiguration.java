@@ -156,7 +156,7 @@ public class KevScriptRunConfiguration extends ModuleBasedConfiguration<KevRunCo
 
         if(nodeName != null) {
             Element nodeNameElem = new Element("NodeName");
-            nodeNameElem.setAttribute("nodeName", kevoreeRuntimeVersion);
+            nodeNameElem.setAttribute("nodeName", nodeName);
             element.addContent(nodeNameElem);
         }
 
