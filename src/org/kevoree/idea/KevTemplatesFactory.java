@@ -15,7 +15,7 @@ import java.util.Properties;
 public class KevTemplatesFactory implements FileTemplateGroupDescriptorFactory {
 
     public enum Template {
-        KevScriptFile("KevScript"), KevComponentFile("KevComponent"), KevChannelFile("KevChannel"), KevGroupFile("KevGroup"), KevMavenProjectPomFile("MavenProject");
+        KevScriptFile("KevScript"), KevComponentFile("KevComponent"), KevChannelFile("KevChannel"), KevGroupFile("KevGroup"), KevNodeFile("KevNode"), KevMavenProjectPomFile("MavenProject");
         final String file;
 
         Template(String file) {
