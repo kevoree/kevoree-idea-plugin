@@ -19,11 +19,10 @@ public class KevScriptDevRunConfigurationProducer extends RunConfigurationProduc
     //Checks if the target of the click is a kevScript file
     @Override
     protected boolean setupConfigurationFromContext(KevScriptDevRunConfiguration kevScriptDevRunConfiguration, ConfigurationContext configurationContext, Ref<PsiElement> psiElementRef) {
-
-        if(configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null && configurationContext.getLocation().getVirtualFile().getExtension() != null) {
-            if(configurationContext.getLocation().getVirtualFile().getExtension().equals(KevScriptLanguageType.DEFAULT_EXTENSION)){
+        if (configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null && configurationContext.getLocation().getVirtualFile().getExtension() != null) {
+            if (configurationContext.getLocation().getVirtualFile().getExtension().equals(KevScriptLanguageType.DEFAULT_EXTENSION)) {
                 kevScriptDevRunConfiguration.kevsFile = configurationContext.getLocation().getVirtualFile();
-                kevScriptDevRunConfiguration.setName("Run " + configurationContext.getModule().getName());
+                kevScriptDevRunConfiguration.setName("Run " + configurationContext.getLocation().getVirtualFile().getName());
                 kevScriptDevRunConfiguration.setModule(configurationContext.getModule());
                 return true;
             }
@@ -34,6 +33,9 @@ public class KevScriptDevRunConfigurationProducer extends RunConfigurationProduc
     //Checks if a RunConfiguration already exists for this project
     @Override
     public boolean isConfigurationFromContext(KevScriptDevRunConfiguration kevScriptDevRunConfiguration, ConfigurationContext configurationContext) {
-        return kevScriptDevRunConfiguration.getName().equals("Run " + configurationContext.getModule().getName());
+        if (configurationContext != null && configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null) {
+            return kevScriptDevRunConfiguration.getName().equals("Run " + configurationContext.getLocation().getVirtualFile().getName());
+        }
+        return false;
     }
 }

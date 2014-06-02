@@ -1,7 +1,11 @@
 package org.kevoree.idea.actions;
 
+import com.intellij.ide.IdeView;
 import com.intellij.ide.actions.CreateFileFromTemplateDialog;
 import com.intellij.ide.actions.CreateTemplateInPackageAction;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
@@ -12,6 +16,7 @@ import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.jps.model.java.JavaModuleSourceRootTypes;
+import org.jetbrains.jps.model.module.JpsModuleSourceRootType;
 import org.kevoree.idea.KevBundle;
 import org.kevoree.idea.KevIcons;
 import org.kevoree.idea.KevTemplatesFactory;
@@ -63,26 +68,12 @@ public class NewGroupTypeAction extends CreateTemplateInPackageAction<PsiElement
 
     @Override
     protected void buildDialog(Project project, PsiDirectory psiDirectory, CreateFileFromTemplateDialog.Builder builder) {
-        PsiFile childs[] = psiDirectory.getFiles();
-        Set<String> packages = new HashSet<String>();
-        for (PsiFile child : childs) {
-            /*
-            if (child instanceof GoFile) {
-                GoFile goFile = (GoFile) child;
-                if (!goFile.getPackage().isMainPackage()) {
-                    packages.add(goFile.getPackage().getPackageName());
-                }
-            }*/
-        }
         builder.addKind("New Kevoree Group", KevIcons.KEVS_ICON_16x16, "main.java");
-        /*
-        for (String packageName : packages) {
-            builder.addKind("New file in library: " + packageName, KevIcons.KEVS_ICON_16x16, "lib." + packageName);
-        }*/
     }
 
     @Override
     protected String getActionName(PsiDirectory psiDirectory, String s, String s2) {
         return KevBundle.message("new.group.lib.action.text");
     }
+
 }

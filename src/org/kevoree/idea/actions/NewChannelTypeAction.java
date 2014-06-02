@@ -63,22 +63,7 @@ public class NewChannelTypeAction extends CreateTemplateInPackageAction<PsiEleme
 
     @Override
     protected void buildDialog(Project project, PsiDirectory psiDirectory, CreateFileFromTemplateDialog.Builder builder) {
-        PsiFile childs[] = psiDirectory.getFiles();
-        Set<String> packages = new HashSet<String>();
-        for (PsiFile child : childs) {
-            /*
-            if (child instanceof GoFile) {
-                GoFile goFile = (GoFile) child;
-                if (!goFile.getPackage().isMainPackage()) {
-                    packages.add(goFile.getPackage().getPackageName());
-                }
-            }*/
-        }
         builder.addKind("New Kevoree Channel", KevIcons.KEVS_ICON_16x16, "main.java");
-        /*
-        for (String packageName : packages) {
-            builder.addKind("New file in library: " + packageName, KevIcons.KEVS_ICON_16x16, "lib." + packageName);
-        }*/
     }
 
     @Override

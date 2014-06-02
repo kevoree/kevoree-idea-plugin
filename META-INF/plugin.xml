@@ -13,8 +13,7 @@
       ]]></description>
 
     <change-notes><![CDATA[
-    V4 : Add Node template generattion action<br/>
-         Add node name parameter to runners<br/>
+    V4 : Fix performance issues, fix naming of runners, add ability to start severals .kevs file in same module, fix compatiblity with JUnit plugin
     V3 : Add debug support<br/>
     V2 : This second version finalize the dev mode and integrate graphical editor. As result, developers can now directly run their code without pre build with mvn install.<br/>
     V1 : This is the first BETA release of the plugin.<br/>

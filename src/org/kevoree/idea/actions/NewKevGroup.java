@@ -14,20 +14,7 @@ public class NewKevGroup extends DefaultActionGroup {
     public void update(AnActionEvent e)
     {
         super.update(e);
-        Sdk sdk = ProjectRootManager.getInstance(e.getProject()).getProjectSdk();
         e.getPresentation().setVisible(true);
-
-
-                 /*
-
-        final Module data = LangDataKeys.MODULE.getData(e.getDataContext());
-        e.getPresentation().setVisible(data != null &&
-                sdk != null &&
-                sdk.getSdkType() instanceof GoSdkType);
-                */
-
-
-
     }
 
 }
