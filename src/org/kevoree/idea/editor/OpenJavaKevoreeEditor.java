@@ -2,18 +2,10 @@ package org.kevoree.idea.editor;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import org.kevoree.idea.utils.KevoreeMavenResolver;
-import org.kevoree.resolver.MavenResolver;
 
 import javax.swing.*;
-import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by duke on 23/01/2014.
