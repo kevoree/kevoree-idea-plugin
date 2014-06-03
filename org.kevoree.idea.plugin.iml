@@ -18,16 +18,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/org.kevoree.maven.resolver-12-SNAPSHOT.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="org.kevoree.maven.resolver-18" level="project" />
+    <orderEntry type="library" name="org.kevoree.maven.resolver-19" level="project" />
   </component>
 </module>
 
