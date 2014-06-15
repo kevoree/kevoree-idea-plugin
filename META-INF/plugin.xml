@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>5</version>
+    <version>6</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
@@ -13,8 +13,9 @@
       ]]></description>
 
     <change-notes><![CDATA[
+    V6 : Fix Maven Dependency generation version / Update resolver to version 20 (https:// -> http:// management)
     V5 : Add Node template generation action and add node name parameter to runners<br/>
-    V4 : Fix performance issues, fix naming of runners, add ability to start severals .kevs file in same module, fix compatiblity with JUnit plugin
+    V4 : Fix performance issues, fix naming of runners, add ability to start several .kevs file in same module, fix compatibility with JUnit plugin
     V3 : Add debug support<br/>
     V2 : This second version finalize the dev mode and integrate graphical editor. As result, developers can now directly run their code without pre build with mvn install.<br/>
     V1 : This is the first BETA release of the plugin.<br/>

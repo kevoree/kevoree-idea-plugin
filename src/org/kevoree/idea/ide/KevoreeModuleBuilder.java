@@ -17,8 +17,11 @@ import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.NotNull;
 import org.kevoree.idea.KevIcons;
 import org.kevoree.idea.KevTemplatesFactory;
+import org.kevoree.resolver.MavenResolver;
 
 import javax.swing.*;
+import java.util.HashSet;
+import java.util.SortedSet;
 
 /**
  * Created by duke on 17/01/2014.
@@ -48,6 +51,16 @@ public class KevoreeModuleBuilder extends JavaModuleBuilder implements SourcePat
 
     @Override
     public void moduleCreated(@NotNull final Module module) {
+
+
+        MavenResolver resolver = new MavenResolver();
+        HashSet<String> urls = new HashSet<String>();
+        urls.add("http://repo1.maven.org/maven2/");
+        SortedSet<String> versions = resolver.listVersion("org.kevoree", "org.kevoree.api", "jar", urls);
+
+
+        final String version = versions.first();
+
 
         module.setOption("org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule", "true");
         final ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
@@ -88,20 +101,25 @@ public class KevoreeModuleBuilder extends JavaModuleBuilder implements SourcePat
                     if (kevs == null) {
                         kevs = mainDir.createSubdirectory("kevs");
                     }
+                    KevTemplatesFactory.createFromTemplate(kevs, "main.kevs", "main.kevs", KevTemplatesFactory.Template.KevScriptHelloFile, version);
+
                     PsiDirectory kevoree = java.findSubdirectory("kevoree");
                     if (kevoree == null) {
                         kevoree = java.createSubdirectory("kevoree");
                     }
-                    KevTemplatesFactory.createFromTemplate(kevoree, "HelloWorld", "HelloWorld.java", KevTemplatesFactory.Template.KevComponentFile);
+                    KevTemplatesFactory.createFromTemplate(kevoree, "HelloWorld", "HelloWorld.java", KevTemplatesFactory.Template.KevComponentFile, version);
                     try {
                         String projectName = module.getName();
                         projectName = projectName.toLowerCase();
                         projectName = projectName.replace(" ", "");
 
-                        KevTemplatesFactory.createFromTemplate(baseDir, projectName, "pom.xml", KevTemplatesFactory.Template.KevMavenProjectPomFile);
+                        KevTemplatesFactory.createFromTemplate(baseDir, projectName, "pom.xml", KevTemplatesFactory.Template.KevMavenProjectPomFile, version);
                     } catch (Exception e) {
                         LOG.error(e.getMessage());
                     }
+
+
+
                 } catch (Exception e) {
                     LOG.error(e.getMessage());
                 }

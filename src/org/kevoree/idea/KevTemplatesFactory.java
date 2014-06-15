@@ -15,7 +15,7 @@ import java.util.Properties;
 public class KevTemplatesFactory implements FileTemplateGroupDescriptorFactory {
 
     public enum Template {
-        KevScriptFile("KevScript"), KevComponentFile("KevComponent"), KevChannelFile("KevChannel"), KevGroupFile("KevGroup"), KevNodeFile("KevNode"), KevMavenProjectPomFile("MavenProject");
+        KevScriptFile("KevScript"),KevScriptHelloFile("KevScriptHello"), KevComponentFile("KevComponent"), KevChannelFile("KevChannel"), KevGroupFile("KevGroup"), KevNodeFile("KevNode"), KevMavenProjectPomFile("MavenProject");
         final String file;
 
         Template(String file) {
@@ -39,7 +39,7 @@ public class KevTemplatesFactory implements FileTemplateGroupDescriptorFactory {
         return group;
     }
 
-    public static PsiElement createFromTemplate(PsiDirectory directory, String name, String fileName, Template template) {
+    public static PsiElement createFromTemplate(PsiDirectory directory, String name, String fileName, Template template, String version) {
         String packageName = directory.getName();
         if (packageName.equalsIgnoreCase("src")) {
             packageName = "main";
@@ -49,15 +49,16 @@ public class KevTemplatesFactory implements FileTemplateGroupDescriptorFactory {
         if (pname == null || pname.equals("")) {
             pname = fileName.replace(".java", "");
         }
-        return createFromTemplate(directory, packageName, pname, fileName, template);
+        return createFromTemplate(directory, packageName, pname, fileName, template,version);
     }
 
-    public static PsiElement createFromTemplate(PsiDirectory directory, String packageName, String name, String fileName, Template template) {
+    public static PsiElement createFromTemplate(PsiDirectory directory, String packageName, String name, String fileName, Template template, String version) {
 
         final FileTemplate fileTemplate = FileTemplateManager.getInstance().getInternalTemplate(template.getFile());
         Properties properties = new Properties(FileTemplateManager.getInstance().getDefaultProperties());
         properties.setProperty("PACKAGE_NAME", packageName);
         properties.setProperty("NAME", name);
+        properties.setProperty("VERSION", version);
         String text;
         try {
             text = fileTemplate.getText(properties);

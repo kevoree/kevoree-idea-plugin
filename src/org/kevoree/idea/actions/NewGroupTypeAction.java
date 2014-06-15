@@ -52,7 +52,7 @@ public class NewGroupTypeAction extends CreateTemplateInPackageAction<PsiElement
         KevTemplatesFactory.Template template = KevTemplatesFactory.Template.KevGroupFile;
         String fileName = fileNameFromTypeName(typeName, parameterName);
         String packageName = packageNameFromTypeName(typeName, parameterName);
-        return KevTemplatesFactory.createFromTemplate(psiDirectory, packageName, fileName, template);
+        return KevTemplatesFactory.createFromTemplate(psiDirectory, packageName, fileName, template,null);
     }
 
     String packageNameFromTypeName(String typeName, String parameterName) {

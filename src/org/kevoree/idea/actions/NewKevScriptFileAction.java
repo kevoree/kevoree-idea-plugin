@@ -51,7 +51,7 @@ public class NewKevScriptFileAction extends CreateTemplateInPackageAction<PsiEle
         KevTemplatesFactory.Template template = KevTemplatesFactory.Template.KevScriptFile;
         String fileName = fileNameFromTypeName(typeName, parameterName);
         String packageName = packageNameFromTypeName(typeName, parameterName);
-        return KevTemplatesFactory.createFromTemplate(psiDirectory, packageName, fileName, template);
+        return KevTemplatesFactory.createFromTemplate(psiDirectory, packageName, fileName, template, null);
     }
 
     String packageNameFromTypeName(String typeName, String parameterName) {

@@ -4,16 +4,21 @@
     <artifactId>${NAME}</artifactId>
     <groupId>org.kevoree.sample</groupId>
     <name>Kevoree :: ${NAME}</name>
-    <version>3.1.5-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <kevoree.version>3.1.5</kevoree.version>
+        <kevoree.version>${VERSION}</kevoree.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.kevoree</groupId>
             <artifactId>org.kevoree.annotation.api</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree</groupId>
+            <artifactId>org.kevoree.api</artifactId>
             <version>${kevoree.version}</version>
         </dependency>
     </dependencies>
