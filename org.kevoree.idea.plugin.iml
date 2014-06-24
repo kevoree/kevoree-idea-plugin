@@ -18,8 +18,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="org.kevoree.maven.resolver-19" level="project" />
     <orderEntry type="library" name="org.kevoree.maven.resolver-20" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="plugin maven idea" level="application" />
   </component>
 </module>
 

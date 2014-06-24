@@ -58,7 +58,9 @@ public class KevTemplatesFactory implements FileTemplateGroupDescriptorFactory {
         Properties properties = new Properties(FileTemplateManager.getInstance().getDefaultProperties());
         properties.setProperty("PACKAGE_NAME", packageName);
         properties.setProperty("NAME", name);
-        properties.setProperty("VERSION", version);
+        if(version != null){
+            properties.setProperty("VERSION", version);
+        }
         String text;
         try {
             text = fileTemplate.getText(properties);
