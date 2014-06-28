@@ -8,6 +8,7 @@ import static org.kevoree.idea.psi.KevScriptTypes.*;
 import static org.kevoree.idea.parser.GeneratedParserUtilBase.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.lang.ASTNode;
+import com.intellij.psi.tree.TokenSet;
 import com.intellij.lang.PsiParser;
 
 @SuppressWarnings({"SimplifiableIfStatement", "UnusedAssignment"})
@@ -34,7 +35,7 @@ public class KevScriptParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // ADD_STATEMENT | SET_STATEMENT | REMOVE_STATEMENT | BIND_STATEMENT | UNBIND_STATEMENT | ATTACH_STATEMENT | DETACH_STATEMENT | NAMESPACE_STATEMENNT | REPO_STATEMENNT | INCLUDE_STATEMENNT | MOVE_STATEMENT | NETWORK_STATEMENT | eof | newline | CRLF
+  // ADD_STATEMENT | SET_STATEMENT | REMOVE_STATEMENT | BIND_STATEMENT | UNBIND_STATEMENT | ATTACH_STATEMENT | DETACH_STATEMENT | START_STATEMENT | STOP_STATEMENT | NAMESPACE_STATEMENNT | REPO_STATEMENNT | INCLUDE_STATEMENNT | MOVE_STATEMENT | NETWORK_STATEMENT | eof | newline | CRLF
   public static boolean ACTIONS(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "ACTIONS")) return false;
     boolean result_ = false;
@@ -46,6 +47,8 @@ public class KevScriptParser implements PsiParser {
     if (!result_) result_ = UNBIND_STATEMENT(builder_, level_ + 1);
     if (!result_) result_ = ATTACH_STATEMENT(builder_, level_ + 1);
     if (!result_) result_ = DETACH_STATEMENT(builder_, level_ + 1);
+    if (!result_) result_ = START_STATEMENT(builder_, level_ + 1);
+    if (!result_) result_ = STOP_STATEMENT(builder_, level_ + 1);
     if (!result_) result_ = NAMESPACE_STATEMENNT(builder_, level_ + 1);
     if (!result_) result_ = REPO_STATEMENNT(builder_, level_ + 1);
     if (!result_) result_ = INCLUDE_STATEMENNT(builder_, level_ + 1);
@@ -368,6 +371,58 @@ public class KevScriptParser implements PsiParser {
   }
 
   /* ********************************************************** */
+  // START IDENT COMMA_SEP*
+  static boolean START_STATEMENT(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "START_STATEMENT")) return false;
+    boolean result_ = false;
+    boolean pinned_ = false;
+    Marker marker_ = enter_section_(builder_, level_, _NONE_, null);
+    result_ = consumeTokens(builder_, 2, START, IDENT);
+    pinned_ = result_; // pin = 2
+    result_ = result_ && START_STATEMENT_2(builder_, level_ + 1);
+    exit_section_(builder_, level_, marker_, null, result_, pinned_, rule_start_parser_);
+    return result_ || pinned_;
+  }
+
+  // COMMA_SEP*
+  private static boolean START_STATEMENT_2(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "START_STATEMENT_2")) return false;
+    int pos_ = current_position_(builder_);
+    while (true) {
+      if (!COMMA_SEP(builder_, level_ + 1)) break;
+      if (!empty_element_parsed_guard_(builder_, "START_STATEMENT_2", pos_)) break;
+      pos_ = current_position_(builder_);
+    }
+    return true;
+  }
+
+  /* ********************************************************** */
+  // STOP IDENT COMMA_SEP*
+  static boolean STOP_STATEMENT(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "STOP_STATEMENT")) return false;
+    boolean result_ = false;
+    boolean pinned_ = false;
+    Marker marker_ = enter_section_(builder_, level_, _NONE_, null);
+    result_ = consumeTokens(builder_, 2, STOP, IDENT);
+    pinned_ = result_; // pin = 2
+    result_ = result_ && STOP_STATEMENT_2(builder_, level_ + 1);
+    exit_section_(builder_, level_, marker_, null, result_, pinned_, rule_start_parser_);
+    return result_ || pinned_;
+  }
+
+  // COMMA_SEP*
+  private static boolean STOP_STATEMENT_2(PsiBuilder builder_, int level_) {
+    if (!recursion_guard_(builder_, level_, "STOP_STATEMENT_2")) return false;
+    int pos_ = current_position_(builder_);
+    while (true) {
+      if (!COMMA_SEP(builder_, level_ + 1)) break;
+      if (!empty_element_parsed_guard_(builder_, "STOP_STATEMENT_2", pos_)) break;
+      pos_ = current_position_(builder_);
+    }
+    return true;
+  }
+
+  /* ********************************************************** */
   // UNBIND IDENT COMMA_SEP* IDENT
   static boolean UNBIND_STATEMENT(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "UNBIND_STATEMENT")) return false;
@@ -395,7 +450,7 @@ public class KevScriptParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // !(ADD|REMOVE|BIND|UNBIND|ATTACH|DETACH|SET|NAMESPACE|REPO|INCLUDE|MOVE|NETWORK)
+  // !(ADD|REMOVE|BIND|UNBIND|ATTACH|DETACH|SET|NAMESPACE|REPO|INCLUDE|MOVE|NETWORK|START|STOP)
   static boolean rule_start(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "rule_start")) return false;
     boolean result_ = false;
@@ -405,7 +460,7 @@ public class KevScriptParser implements PsiParser {
     return result_;
   }
 
-  // ADD|REMOVE|BIND|UNBIND|ATTACH|DETACH|SET|NAMESPACE|REPO|INCLUDE|MOVE|NETWORK
+  // ADD|REMOVE|BIND|UNBIND|ATTACH|DETACH|SET|NAMESPACE|REPO|INCLUDE|MOVE|NETWORK|START|STOP
   private static boolean rule_start_0(PsiBuilder builder_, int level_) {
     if (!recursion_guard_(builder_, level_, "rule_start_0")) return false;
     boolean result_ = false;
@@ -422,6 +477,8 @@ public class KevScriptParser implements PsiParser {
     if (!result_) result_ = consumeToken(builder_, INCLUDE);
     if (!result_) result_ = consumeToken(builder_, MOVE);
     if (!result_) result_ = consumeToken(builder_, NETWORK);
+    if (!result_) result_ = consumeToken(builder_, START);
+    if (!result_) result_ = consumeToken(builder_, STOP);
     exit_section_(builder_, marker_, null, result_);
     return result_;
   }

@@ -1,7 +1,7 @@
-package org.kevoree.tools.kevscript.idea.lexer;
+package org.kevoree.idea.lexer;
 import com.intellij.lexer.*;
 import com.intellij.psi.tree.IElementType;
-import static org.kevoree.tools.kevscript.idea.psi.KevScriptTypes.*;
+import static org.kevoree.idea.psi.KevScriptTypes.*;
 
 %%
 
@@ -31,6 +31,8 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
 <YYINITIAL> {
   {WHITE_SPACE}      { return com.intellij.psi.TokenType.WHITE_SPACE; }
 
+  "start"            { return START; }
+  "stop"             { return STOP; }
   "add"              { return ADD; }
   "remove"           { return REMOVE; }
   "bind"             { return BIND; }
@@ -48,6 +50,7 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
   "/"                { return SUB; }
   "="                { return EQ; }
   "<<EOF>>"          { return EOF; }
+  "CRLF"             { return CRLF; }
 
   {NEWLINE}          { return NEWLINE; }
   {COMMENT}          { return COMMENT; }

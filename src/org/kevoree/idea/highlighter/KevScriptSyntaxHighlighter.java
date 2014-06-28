@@ -69,6 +69,13 @@ public class KevScriptSyntaxHighlighter extends SyntaxHighlighterBase {
         if (tokenType.equals(KevScriptTypes.MOVE)) {
             return KEYWORD_KEYS;
         }
+        if (tokenType.equals(KevScriptTypes.START)) {
+            return KEYWORD_KEYS;
+        }
+        if (tokenType.equals(KevScriptTypes.STOP)) {
+            return KEYWORD_KEYS;
+        }
+
         /* Model manipulation */
         if (tokenType.equals(KevScriptTypes.NAMESPACE)) {
             return KEYWORD_KEYS;

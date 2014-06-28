@@ -29,6 +29,8 @@ public interface KevScriptTypes {
   IElementType REMOVE = new KevScriptTokenType("remove");
   IElementType REPO = new KevScriptTokenType("repo");
   IElementType SET = new KevScriptTokenType("set");
+  IElementType START = new KevScriptTokenType("start");
+  IElementType STOP = new KevScriptTokenType("stop");
   IElementType STRING = new KevScriptTokenType("string");
   IElementType SUB = new KevScriptTokenType("/");
   IElementType UNBIND = new KevScriptTokenType("unbind");
@@ -37,7 +39,7 @@ public interface KevScriptTypes {
     public static PsiElement createElement(ASTNode node) {
       IElementType type = node.getElementType();
        if (type == ACTIONS) {
-        return new KevScriptACTIONSImpl(node);
+        return new KevScriptActionsImpl(node);
       }
       throw new AssertionError("Unknown element type: " + type);
     }
