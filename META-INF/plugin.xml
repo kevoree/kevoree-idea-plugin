@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>9</version>
+    <version>10</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
@@ -13,6 +13,7 @@
       ]]></description>
 
     <change-notes><![CDATA[
+    V10 : Add support for Kevoree 5
     V9 : Change KevScript start and stop statements
     V8 : Fix Run configuration names for uniqueness
     V7 : Fix null pointer exception in KevS generation

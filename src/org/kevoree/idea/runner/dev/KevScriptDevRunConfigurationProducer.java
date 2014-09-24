@@ -33,7 +33,7 @@ public class KevScriptDevRunConfigurationProducer extends RunConfigurationProduc
     //Checks if a RunConfiguration already exists for this project
     @Override
     public boolean isConfigurationFromContext(KevScriptDevRunConfiguration kevScriptDevRunConfiguration, ConfigurationContext configurationContext) {
-        if (configurationContext != null && configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null) {
+        if (kevScriptDevRunConfiguration != null && kevScriptDevRunConfiguration.getName() != null && configurationContext != null && configurationContext.getLocation() != null && configurationContext.getLocation().getVirtualFile() != null) {
             return kevScriptDevRunConfiguration.getName().equals("Run " + configurationContext.getLocation().getVirtualFile().getName() + " - " + configurationContext.getModule().getName());
         }
         return false;
