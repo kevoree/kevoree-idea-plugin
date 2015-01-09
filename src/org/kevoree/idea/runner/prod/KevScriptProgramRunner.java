@@ -20,10 +20,8 @@ public class KevScriptProgramRunner extends GenericDebuggerRunner {
     @Nullable
     @Override
     protected RunContentDescriptor doExecute(Project project, RunProfileState runProfileState, RunContentDescriptor runContentDescriptor, ExecutionEnvironment executionEnvironment) throws ExecutionException {
-
-        final JavaCommandLine javaCommandLine = (JavaCommandLine)runProfileState;
+        final JavaCommandLine javaCommandLine = (JavaCommandLine) runProfileState;
         final JavaParameters params = javaCommandLine.getJavaParameters();
-
         String address = null;
         try {
             for (String s : params.getProgramParametersList().getList()) {
@@ -34,16 +32,14 @@ public class KevScriptProgramRunner extends GenericDebuggerRunner {
                     break;
                 }
             }
-        }
-        catch (ExecutionException ignored) {
+        } catch (ExecutionException ignored) {
         }
 
         if (address == null) {
-            return super.createContentDescriptor(project, runProfileState, runContentDescriptor, executionEnvironment);
+            return super.createContentDescriptor(runProfileState, executionEnvironment);
         }
-
         RemoteConnection connection = new RemoteConnection(true, "127.0.0.1", address, false);
-        return attachVirtualMachine(project, runProfileState, runContentDescriptor, executionEnvironment, connection, true);
+        return attachVirtualMachine(runProfileState, executionEnvironment, connection, true);
     }
 
     @Override

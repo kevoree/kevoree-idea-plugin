@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>11</version>
+    <version>12</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
@@ -13,7 +13,8 @@
       ]]></description>
 
     <change-notes><![CDATA[
-    V11 : Fix Runner fox Kevoree 5
+    V12 : Fix Support for IDEA 14
+    V11 : Fix Runner for Kevoree 5
     V10 : Add support for Kevoree 5
     V9 : Change KevScript start and stop statements
     V8 : Fix Run configuration names for uniqueness
