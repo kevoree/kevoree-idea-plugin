@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>12</version>
+    <version>13</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
@@ -13,19 +13,19 @@
       ]]></description>
 
     <change-notes><![CDATA[
-    V12 : Fix Support for IDEA 14
-    V11 : Fix Runner for Kevoree 5
-    V10 : Add support for Kevoree 5
-    V9 : Change KevScript start and stop statements
-    V8 : Fix Run configuration names for uniqueness
-    V7 : Fix null pointer exception in KevS generation
-    V6 : Fix Maven Dependency generation version / Update resolver to version 20 (https:// -> http:// management)
+    V13 : Fix templates according<br />
+    V12 : Fix Support for IDEA 14<br />
+    V11 : Fix Runner for Kevoree 5<br />
+    V10 : Add support for Kevoree 5<br />
+    V9 : Change KevScript start and stop statements<br />
+    V8 : Fix Run configuration names for uniqueness<br />
+    V7 : Fix null pointer exception in KevS generation<br />
+    V6 : Fix Maven Dependency generation version / Update resolver to version 20 (https:// -> http:// management)<br />
     V5 : Add Node template generation action and add node name parameter to runners<br/>
-    V4 : Fix performance issues, fix naming of runners, add ability to start several .kevs file in same module, fix compatibility with JUnit plugin
+    V4 : Fix performance issues, fix naming of runners, add ability to start several .kevs file in same module, fix compatibility with JUnit plugin<br />
     V3 : Add debug support<br/>
     V2 : This second version finalize the dev mode and integrate graphical editor. As result, developers can now directly run their code without pre build with mvn install.<br/>
-    V1 : This is the first BETA release of the plugin.<br/>
-      It contains only new features ! :-)
+    V1 : This is the first BETA release of the plugin.It contains only new features ! :-)<br />
             ]]>
     </change-notes>
 
