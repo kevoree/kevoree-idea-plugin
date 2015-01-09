@@ -1,9 +1,10 @@
 package ${PACKAGE_NAME};
 
 import org.kevoree.annotation.*;
+import org.kevoree.api.Callback;
+import org.kevoree.api.CallbackResult;
 
 @ComponentType
-@Library(name = "Java")
 public class ${NAME} {
 
     @Param(defaultValue = "Default Content")
@@ -19,7 +20,19 @@ public class ${NAME} {
     public String in(Object i) {
         String msg = message+" from "+context.getInstanceName()+"@"+context.getNodeName();
         System.out.println(msg);
-        out.send(msg);
+        out.send(msg, new Callback() {
+            public void onSuccess(CallbackResult callbackResult) {
+                //message successfully transferred
+                String response = callbackResult.getPayload();
+            }
+
+            public void onError(Throwable throwable) {
+                //Error occurred
+                if(throwable != null) {
+                    throwable.printStackTrace();
+                }
+            }
+        });
         return msg;
     }
 

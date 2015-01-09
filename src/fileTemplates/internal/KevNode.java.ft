@@ -1,18 +1,17 @@
 package ${PACKAGE_NAME};
 
-import org.kevoree.annotation.*;
+import org.kevoree.annotation.KevoreeInject;
+import org.kevoree.annotation.NodeType;
+import org.kevoree.annotation.Start;
+import org.kevoree.annotation.Stop;
 import org.kevoree.api.*;
 import org.kevoree.api.handler.*;
 
 @NodeType
-@Library(name = "Java")
-public class ${NAME} implements ModelListener, org.kevoree.api.NodeType {
+public class ${NAME} implements ModelListener {
 
     @KevoreeInject
     public ModelService modelService = null;
-
-    @KevoreeInject
-    public BootstrapService bootstrapService = null;
 
     @KevoreeInject
     Context context;
@@ -27,7 +26,29 @@ public class ${NAME} implements ModelListener, org.kevoree.api.NodeType {
 
     }
 
+    public boolean preUpdate(UpdateContext updateContext) {
+        return false;
+    }
 
+    public boolean initUpdate(UpdateContext updateContext) {
+        return false;
+    }
+
+    public boolean afterLocalUpdate(UpdateContext updateContext) {
+        return false;
+    }
+
+    public void modelUpdated() {
+
+    }
+
+    public void preRollback(UpdateContext updateContext) {
+
+    }
+
+    public void postRollback(UpdateContext updateContext) {
+
+    }
 
 
 }
