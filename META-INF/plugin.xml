@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>org.kevoree.idea.plugin</id>
     <name>Kevoree</name>
-    <version>13</version>
+    <version>14</version>
     <vendor email="fouquet.f@gmail.com" url="http://www.kevoree.org">Kevoree</vendor>
 
     <description><![CDATA[
@@ -10,9 +10,11 @@
       - Wizards to create a Kevoree Project, Kevoree Components, Channels and Groups <br/>
       - A wizards to create a KevScript file with its editor <br/>
       - A runner to launch a Kevoree Runtime of any available version, that launches using your KevScript as base configuration.
-      ]]></description>
+      ]]>
+    </description>
 
     <change-notes><![CDATA[
+    V14 : Change annotator strategy<br />
     V13 : Fix templates according<br />
     V12 : Fix Support for IDEA 14<br />
     V11 : Fix Runner for Kevoree 5<br />
@@ -90,7 +92,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
 
-        <toolWindow id="KevoreeEditor" icon="/icons/kevs_16x16.png" anchor="right" factoryClass="org.kevoree.idea.editor.KevoreeEditorToolWindowFactory"/>
+        <toolWindow id="KevoreeEditor" icon="/icons/kevs_16x16.png" anchor="right"
+                    factoryClass="org.kevoree.idea.editor.KevoreeEditorToolWindowFactory"/>
 
         <fileTypeFactory implementation="org.kevoree.idea.KevScriptFileTypeFactory"/>
         <lang.parserDefinition language="KevScript"
@@ -99,9 +102,9 @@
                                        implementationClass="org.kevoree.idea.highlighter.KevScriptSyntaxHighlighterFactory"/>
         <colorSettingsPage implementation="org.kevoree.idea.highlighter.KevScriptColorSettingsPage"/>
 
-         <!--
-        <fileEditorProvider implementation="org.kevoree.idea.editor.KevoreeSwingEditorProvider"/>
-         -->
+        <!--
+       <fileEditorProvider implementation="org.kevoree.idea.editor.KevoreeSwingEditorProvider"/>
+        -->
 
         <!-- wizards -->
         <moduleBuilder builderClass="org.kevoree.idea.ide.KevoreeModuleBuilder"/>
